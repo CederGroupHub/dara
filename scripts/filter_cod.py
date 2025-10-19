@@ -5,7 +5,7 @@ symmetry.
 import logging
 from pathlib import Path
 
-import ray,os
+import ray
 from dara import SETTINGS
 from dara.cif import Cif
 from monty.serialization import dumpfn, loadfn
@@ -18,10 +18,6 @@ from pymatgen.core import Element
 path_to_cod = Path(SETTINGS.PATH_TO_COD)
 
 MAX_NUM_ATOMS = 128
-
-# Initialize Ray with the working directory before starting dara
-if not ray.is_initialized():
-    ray.init(runtime_env={"working_dir": os.getcwd()})
 
 
 @ray.remote(num_cpus=1)

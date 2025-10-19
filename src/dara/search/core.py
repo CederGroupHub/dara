@@ -3,15 +3,12 @@
 from __future__ import annotations
 
 import copy
+import os
 from collections import deque
 from traceback import print_exc
 from typing import TYPE_CHECKING, Literal
 
-import ray,os
-
-if not ray.is_initialized():
-    ray.init(runtime_env={"working_dir": os.getcwd()})
-
+import ray
 
 from dara.search.tree import BaseSearchTree, SearchTree
 
@@ -106,6 +103,9 @@ def search_phases(
         rpb_threshold=rpb_threshold,
         record_peak_matcher_scores=record_peak_matcher_scores,
     )
+
+    if not ray.is_initialized():
+        ray.init(runtime_env={"WORKING_DIR": os.getcwd()})
 
     max_worker = ray.cluster_resources()["CPU"]
     pending = [remote_expand_node(search_tree, search_tree.root)]

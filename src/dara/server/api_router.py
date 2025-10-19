@@ -19,7 +19,7 @@ from dara.server.utils import convert_to_local_tz, get_result_store, get_worker_
 from dara.server.worker import (
     add_job_to_queue,
 )
-from dara.structure_db import CODDatabase, ICSDDatabase
+from dara.structure_db import CODDatabase
 from dara.utils import (
     get_compositional_clusters,
     get_head_of_compositional_cluster,
@@ -101,7 +101,7 @@ async def submit(
                 pattern,
                 precursors=precursor_formulas,
                 predict_kwargs={"temp": temperature + 273},
-                cif_dbs=[ICSDDatabase()],
+                cif_dbs=[CODDatabase()],
                 additional_cifs=additional_cifs,
                 additional_cif_params={"lattice_range": 0.05},
                 search_kwargs={
@@ -120,7 +120,7 @@ async def submit(
             ).make(
                 pattern,
                 precursors=precursor_formulas,
-                cif_dbs=[ICSDDatabase()],
+                cif_dbs=[CODDatabase()],
                 additional_cifs=additional_cifs,
                 additional_cif_params={"lattice_range": 0.05},
                 search_kwargs={

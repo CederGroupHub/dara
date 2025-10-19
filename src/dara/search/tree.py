@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import warnings
 from itertools import zip_longest
 from numbers import Number
@@ -10,7 +11,7 @@ from typing import TYPE_CHECKING, Literal
 import jenkspy
 import numpy as np
 import pandas as pd
-import ray,os
+import ray
 from sklearn.cluster import AgglomerativeClustering
 from treelib import Node, Tree
 
@@ -37,9 +38,6 @@ if TYPE_CHECKING:
 
 logger = get_logger(__name__, level="INFO")
 
-# Initialize Ray with the working directory before starting dara
-if not ray.is_initialized():
-    ray.init(runtime_env={"working_dir": os.getcwd()})
 
 @ray.remote(num_cpus=1)
 def remote_do_refinement_no_saving(
@@ -55,8 +53,8 @@ def remote_do_refinement_no_saving(
 
     If the refinement fails, None will be returned.
     """
-    if 'working_dir' in os.environ:
-        os.chdir(os.environ['working_dir'])
+    if "WORKING_DIR" in os.environ:
+        os.chdir(os.environ["WORKING_DIR"])
     if len(cif_paths) == 0:
         return None
     try:
