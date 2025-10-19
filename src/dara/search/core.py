@@ -105,7 +105,7 @@ def search_phases(
     )
 
     if not ray.is_initialized():
-        ray.init(runtime_env={"WORKING_DIR": os.getcwd()})
+        ray.init(runtime_env={"working_dir": os.getcwd()})
 
     max_worker = ray.cluster_resources()["CPU"]
     pending = [remote_expand_node(search_tree, search_tree.root)]

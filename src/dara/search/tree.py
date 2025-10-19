@@ -53,8 +53,6 @@ def remote_do_refinement_no_saving(
 
     If the refinement fails, None will be returned.
     """
-    if "WORKING_DIR" in os.environ:
-        os.chdir(os.environ["WORKING_DIR"])
     if len(cif_paths) == 0:
         return None
     try:
