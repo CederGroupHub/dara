@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import copy
-import os
 from collections import deque
 from traceback import print_exc
 from typing import TYPE_CHECKING, Literal
@@ -86,6 +85,9 @@ def search_phases(
     if refinement_params is None:
         refinement_params = {}
 
+    if not ray.is_initialized():
+        ray.init(runtime_env={"working_dir": None})
+
     phase_params = {**DEFAULT_PHASE_PARAMS, **phase_params}
     refinement_params = {**DEFAULT_REFINEMENT_PARAMS, **refinement_params}
 
@@ -103,9 +105,6 @@ def search_phases(
         rpb_threshold=rpb_threshold,
         record_peak_matcher_scores=record_peak_matcher_scores,
     )
-
-    if not ray.is_initialized():
-        ray.init(runtime_env={"working_dir": os.getcwd()})
 
     max_worker = ray.cluster_resources()["CPU"]
     pending = [remote_expand_node(search_tree, search_tree.root)]

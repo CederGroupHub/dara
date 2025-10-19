@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 from tempfile import TemporaryDirectory
 from traceback import format_exc
 
+import ray
 from jobflow.managers.local import run_locally
 from monty.serialization import MontyDecoder
 
@@ -16,6 +17,7 @@ def worker_process():
     """Start the Ray worker process."""
     logger.info("Starting worker process for job execution...")
     mark_running_jobs_as_fizzled()
+
     while True:
         for job_uuid in get_all_pending_jobs():
             logger.debug(f"Job {job_uuid} has started...")
@@ -26,6 +28,10 @@ def worker_process():
 def run_job(uuid):
     """Run a job remotely by its UUID."""
     with get_worker_store() as worker_store:
+        # launch ray earlier. To make sure it is run in a "pernament" folder that will not be deleted.
+        if not ray.is_initialized():
+            ray.init(runtime_env={"working_dir": None})
+
         job = worker_store.query_one(criteria={"uuid": uuid})
         job["start_time"] = datetime.now(tz=timezone.utc)
         job["status"] = "RUNNING"

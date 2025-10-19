@@ -143,7 +143,7 @@ class PhaseSearchMaker(Maker):
             final_refinement_params: Parameters for the final refinement.
             computed_entries: Computed entries to use for phase prediction.
         """
-        directory = Path(os.getcwd())
+        directory = Path(os.getcwd()).resolve()
 
         if predict_kwargs is None:
             predict_kwargs = {}

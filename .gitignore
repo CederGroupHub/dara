@@ -6,6 +6,7 @@ __pycache__/
 .vscode/
 .idea/
 node_modules/
+__MACOSX/
 
 # C extensions
 *.so
