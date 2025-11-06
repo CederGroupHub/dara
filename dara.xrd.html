@@ -423,6 +423,12 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.RASXFile"><code class="docutils literal notranslate"><span class="pre">RASXFile</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.RASXFile.binary_data"><code class="docutils literal notranslate"><span class="pre">RASXFile.binary_data</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.RASXFile.from_file"><code class="docutils literal notranslate"><span class="pre">RASXFile.from_file()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.RASXFile.to_rasx_file"><code class="docutils literal notranslate"><span class="pre">RASXFile.to_rasx_file()</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.RawFile"><code class="docutils literal notranslate"><span class="pre">RawFile</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.RawFile.binary_data"><code class="docutils literal notranslate"><span class="pre">RawFile.binary_data</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.RawFile.from_file"><code class="docutils literal notranslate"><span class="pre">RawFile.from_file()</span></code></a></li>
@@ -451,8 +457,10 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.get_xrdml_data"><code class="docutils literal notranslate"><span class="pre">get_xrdml_data()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.hex2float"><code class="docutils literal notranslate"><span class="pre">hex2float()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.hex2int"><code class="docutils literal notranslate"><span class="pre">hex2int()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.load_rasx"><code class="docutils literal notranslate"><span class="pre">load_rasx()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.load_raw"><code class="docutils literal notranslate"><span class="pre">load_raw()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.load_xrdml"><code class="docutils literal notranslate"><span class="pre">load_xrdml()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.rasx2xy"><code class="docutils literal notranslate"><span class="pre">rasx2xy()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.raw2xy"><code class="docutils literal notranslate"><span class="pre">raw2xy()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.xrdml2xy"><code class="docutils literal notranslate"><span class="pre">xrdml2xy()</span></code></a></li>
 </ul>
@@ -468,7 +476,45 @@
                   
   <section id="module-dara.xrd">
 <span id="dara-xrd-module"></span><h1>dara.xrd module<a class="headerlink" href="#module-dara.xrd" title="Link to this heading">#</a></h1>
-<p>Load and process XRD data files (.xrdml, .xy).</p>
+<p>Load and process XRD data files (.xrdml, .xy, .rasx).</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="dara.xrd.RASXFile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RASXFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intensities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">binary_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.xrd.RASXFile" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dara.xrd.XRDData" title="dara.xrd.XRDData"><code class="xref py py-class docutils literal notranslate"><span class="pre">XRDData</span></code></a></p>
+<p>Load Rigaku RASX file data format.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="dara.xrd.RASXFile.binary_data">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">binary_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#dara.xrd.RASXFile.binary_data" title="Link to this definition">#</a></dt>
+<dd><p>Binary data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dara.xrd.RASXFile.from_file">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.xrd.RASXFile.from_file" title="Link to this definition">#</a></dt>
+<dd><p>Load data from a RASX file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#dara.xrd.RASXFile" title="dara.xrd.RASXFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">RASXFile</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dara.xrd.RASXFile.to_rasx_file">
+<span class="sig-name descname"><span class="pre">to_rasx_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xrd_data.rasx'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.xrd.RASXFile.to_rasx_file" title="Link to this definition">#</a></dt>
+<dd><p>Save as a RASX file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fn</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></span>) – filename to save to. Defaults to “xrd_data.rasx”.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="dara.xrd.RawFile">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RawFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intensities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">binary_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.xrd.RawFile" title="Link to this definition">#</a></dt>
@@ -663,6 +709,26 @@ the Aeris instrument.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="dara.xrd.load_rasx">
+<span class="sig-name descname"><span class="pre">load_rasx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.xrd.load_rasx" title="Link to this definition">#</a></dt>
+<dd><p>Convert RASX file to xy data.</p>
+<p>RASX files are ZIP archives containing:
+- root.xml file
+- Data*/ folders with Profile*.txt files (scan_angle, intensity, attenuation)
+- MesurementConditions*.xml files (note: typo in original format)</p>
+<p>This function extracts the first scan’s data from the first Profile file found.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code>]</span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple of ((angles, intensities), content) where content is the raw ZIP bytes.
+The content is kept for potential round-trip saving, though it’s rarely used.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="dara.xrd.load_raw">
 <span class="sig-name descname"><span class="pre">load_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.xrd.load_raw" title="Link to this definition">#</a></dt>
 <dd><p>Convert raw file to xy data.</p>
@@ -680,6 +746,17 @@ the Aeris instrument.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dara.xrd.rasx2xy">
+<span class="sig-name descname"><span class="pre">rasx2xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.xrd.rasx2xy" title="Link to this definition">#</a></dt>
+<dd><p>Convert .rasx file to .xy file (and save).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -745,6 +822,12 @@ the Aeris instrument.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.RASXFile"><code class="docutils literal notranslate"><span class="pre">RASXFile</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.RASXFile.binary_data"><code class="docutils literal notranslate"><span class="pre">RASXFile.binary_data</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.RASXFile.from_file"><code class="docutils literal notranslate"><span class="pre">RASXFile.from_file()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.RASXFile.to_rasx_file"><code class="docutils literal notranslate"><span class="pre">RASXFile.to_rasx_file()</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.RawFile"><code class="docutils literal notranslate"><span class="pre">RawFile</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.RawFile.binary_data"><code class="docutils literal notranslate"><span class="pre">RawFile.binary_data</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.RawFile.from_file"><code class="docutils literal notranslate"><span class="pre">RawFile.from_file()</span></code></a></li>
@@ -773,8 +856,10 @@ the Aeris instrument.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.get_xrdml_data"><code class="docutils literal notranslate"><span class="pre">get_xrdml_data()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.hex2float"><code class="docutils literal notranslate"><span class="pre">hex2float()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.hex2int"><code class="docutils literal notranslate"><span class="pre">hex2int()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.load_rasx"><code class="docutils literal notranslate"><span class="pre">load_rasx()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.load_raw"><code class="docutils literal notranslate"><span class="pre">load_raw()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.load_xrdml"><code class="docutils literal notranslate"><span class="pre">load_xrdml()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.rasx2xy"><code class="docutils literal notranslate"><span class="pre">rasx2xy()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.raw2xy"><code class="docutils literal notranslate"><span class="pre">raw2xy()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.xrdml2xy"><code class="docutils literal notranslate"><span class="pre">xrdml2xy()</span></code></a></li>
 </ul>

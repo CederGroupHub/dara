@@ -17,7 +17,7 @@ The Dara server is a FastAPI-based backend that manages data storage, computatio
 - No need for installation of MongoDB or other database systems.
 
 **🔬 Automated Phase Identification**
-- Upload powder XRD patterns in multiple formats (`.xy`, `.txt`, `.xye`, `.xrdml`, `.raw`)
+- Upload powder XRD patterns in multiple formats (`.xy`, `.txt`, `.xye`, `.xrdml`, `.raw`, `.rasx`)
 - Automated phase identification using crystallographic databases (COD, ICSD)
 - Advanced Rietveld refinement using BGMN engine
 - Machine learning-enhanced phase matching
@@ -176,13 +176,13 @@ import requests
 from pathlib import Path
 
 def submit_analysis(
-    file_path, 
-    precursors, 
+    file_path,
+    precursors,
     user="researcher",
     base_url="http://localhost:8898"
 ):
     url = f"{base_url}/api/submit"
-    
+
     with open(file_path, 'rb') as f:
         files = {'pattern_file': f}
         data = {
@@ -193,14 +193,14 @@ def submit_analysis(
             'instrument_profile': 'Aeris-fds-Pixcel1d-Medipix3',
             'wavelength': 'Cu'
         }
-        
+
         response = requests.post(url, files=files, data=data)
         return response.json()
 
 # Example usage
 result = submit_analysis(
-    "sample.xrdml", 
-    ["CaO", "TiO2"], 
+    "sample.xrdml",
+    ["CaO", "TiO2"],
     user="john_doe"
 )
 print(f"Job submitted with ID: {result['wf_id']}")
@@ -228,7 +228,7 @@ def list_tasks(user=None, page=1, limit=10, base_url="http://localhost:8898"):
     params = {'page': page, 'limit': limit}
     if user:
         params['user'] = user
-    
+
     response = requests.get(f"{base_url}/api/tasks", params=params)
     return response.json()
 
