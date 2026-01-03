@@ -1,0 +1,823 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dara.structure_db &#8212; Dara Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/autodoc_pydantic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=877af9a5"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dara/structure_db';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="icon" href="../../_static/logo.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="1.1.4" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo-wide.svg" class="logo__image only-light" alt="Dara Documentation - Home"/>
+    <img src="../../_static/logo-wide-dark.svg" class="logo__image only-dark pst-js-only" alt="Dara Documentation - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/idocx/dara" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web_server.html">Web Server</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorials.html">Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/automated_refinement.html">1. Automated refinement with BGMN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/phase_search.html">2. Phase analysis with tree search</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">API Docs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../dara.html">dara package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../dara.bgmn.html">dara.bgmn package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.bgmn.download_bgmn.html">dara.bgmn.download_bgmn module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.data.html">dara.data package</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../dara.prediction.html">dara.prediction package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.prediction.base.html">dara.prediction.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.prediction.core.html">dara.prediction.core module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.prediction.rn.html">dara.prediction.rn module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.prediction.rxn_ca.html">dara.prediction.rxn_ca module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../dara.search.html">dara.search package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.search.core.html">dara.search.core module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.search.data_model.html">dara.search.data_model module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.search.peak_matcher.html">dara.search.peak_matcher module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.search.tree.html">dara.search.tree module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../dara.server.html">dara.server package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.server.api_router.html">dara.server.api_router module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.server.app.html">dara.server.app module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.server.setting.html">dara.server.setting module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.server.utils.html">dara.server.utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.server.worker.html">dara.server.worker module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.bgmn_worker.html">dara.bgmn_worker module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.cif.html">dara.cif module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.cif2str.html">dara.cif2str module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.cli.html">dara.cli module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.eflech_worker.html">dara.eflech_worker module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.generate_control_file.html">dara.generate_control_file module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.jobs.html">dara.jobs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.peak_detection.html">dara.peak_detection module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.plot.html">dara.plot module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.refine.html">dara.refine module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.result.html">dara.result module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.schema.html">dara.schema module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.settings.html">dara.settings module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.structure_db.html">dara.structure_db module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.utils.html">dara.utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.xrd.html">dara.xrd module</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/idocx/dara" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for dara.structure_db</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Interact with the (local) ICSD database.&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tempfile</span><span class="w"> </span><span class="kn">import</span> <span class="n">NamedTemporaryFile</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">monty.json</span><span class="w"> </span><span class="kn">import</span> <span class="n">MSONable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">monty.serialization</span><span class="w"> </span><span class="kn">import</span> <span class="n">loadfn</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pymatgen.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">Composition</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm.contrib.concurrent</span><span class="w"> </span><span class="kn">import</span> <span class="n">thread_map</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">dara.cif</span><span class="w"> </span><span class="kn">import</span> <span class="n">Cif</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dara.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">COMMON_GASES</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dara.settings</span><span class="w"> </span><span class="kn">import</span> <span class="n">DaraSettings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dara.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">copy_and_rename_files</span><span class="p">,</span> <span class="n">get_logger</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">get_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="n">DARA_SETTINGS</span> <span class="o">=</span> <span class="n">DaraSettings</span><span class="p">()</span>
+
+<span class="n">PATH_TO_COD</span> <span class="o">=</span> <span class="n">DARA_SETTINGS</span><span class="o">.</span><span class="n">PATH_TO_COD</span>
+<span class="n">PATH_TO_ICSD</span> <span class="o">=</span> <span class="n">DARA_SETTINGS</span><span class="o">.</span><span class="n">PATH_TO_ICSD</span>
+
+
+<div class="viewcode-block" id="StructureDatabase">
+<a class="viewcode-back" href="../../dara.structure_db.html#dara.structure_db.StructureDatabase">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">StructureDatabase</span><span class="p">(</span><span class="n">MSONable</span><span class="p">,</span> <span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Base class to interact with CIF files from an experimental database of</span>
+<span class="sd">    structures. This class is subclassed by ICSDDatabase, CODDatabase, etc.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path_to_cifs</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize an object for interacting with CIFs from a structure database.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            path_to_cifs: Path to a folder containing the CIFs for the database. If this</span>
+<span class="sd">                is not provided, the default path from DaraSettings will be used.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_path_to_cifs</span> <span class="o">=</span> <span class="n">path_to_cifs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_preparsed_info</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+<div class="viewcode-block" id="StructureDatabase.get_cifs_by_formulas">
+<a class="viewcode-back" href="../../dara.structure_db.html#dara.structure_db.StructureDatabase.get_cifs_by_formulas">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_cifs_by_formulas</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">formulas</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+        <span class="n">e_hull_filter</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
+        <span class="n">copy_files</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">dest_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;dara_cifs&quot;</span><span class="p">,</span>
+        <span class="n">exclude_gases</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a list of database CIF codes corresponding to formulas, and optionally copy CIF</span>
+<span class="sd">        files into a destination folder.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            formulas: List of formulas to search for.</span>
+<span class="sd">            e_hull_filter: Filter out structures with e_hull above this value (compared</span>
+<span class="sd">                via spacegroup).</span>
+<span class="sd">            copy_files: Whether to copy CIF files to a destination folder.</span>
+<span class="sd">            dest_dir: Destination folder for copied CIF files.</span>
+<span class="sd">            exclude_gases: Whether to exclude common gases (e.g., O2) from the results.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">file_map</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">all_data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">formula</span> <span class="ow">in</span> <span class="n">formulas</span><span class="p">:</span>
+            <span class="n">all_data</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_formula_data</span><span class="p">(</span><span class="n">formula</span><span class="p">))</span>
+
+        <span class="n">file_map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_generate_file_map</span><span class="p">(</span><span class="n">all_data</span><span class="p">,</span> <span class="n">e_hull_filter</span><span class="p">,</span> <span class="n">exclude_gases</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">copy_files</span><span class="p">:</span>
+            <span class="n">copy_and_rename_files</span><span class="p">(</span><span class="n">file_map</span><span class="p">,</span> <span class="n">dest_dir</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">all_data</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="StructureDatabase.get_cifs_by_chemsys">
+<a class="viewcode-back" href="../../dara.structure_db.html#dara.structure_db.StructureDatabase.get_cifs_by_chemsys">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_cifs_by_chemsys</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">chemsys</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+        <span class="n">e_hull_filter</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
+        <span class="n">copy_files</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">dest_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;dara_cifs&quot;</span><span class="p">,</span>
+        <span class="n">exclude_gases</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a list of database CIF codes corresponding to structures in a chemical system.</span>
+<span class="sd">        Option to copy CIF files into a destination folder.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            chemsys: Chemical system to search for (e.g., &quot;Fe-O&quot;).</span>
+<span class="sd">            e_hull_filter: Filter out structures with e_hull above this value (compared</span>
+<span class="sd">                via spacegroup).</span>
+<span class="sd">            copy_files: Whether to copy CIF files to a destination folder.</span>
+<span class="sd">            dest_dir: Destination folder for copied CIF files.</span>
+<span class="sd">            exclude_gases: Whether to exclude common gases (e.g., O2) from the results.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">chemsys</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">chemsys</span> <span class="o">=</span> <span class="n">chemsys</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)</span>
+
+        <span class="n">elements_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">chemsys</span><span class="p">)</span>  <span class="c1"># remove duplicate elements</span>
+        <span class="n">all_data</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">elements_set</span><span class="p">)):</span>
+            <span class="k">for</span> <span class="n">els</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">combinations</span><span class="p">(</span><span class="n">elements_set</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="n">sub_chemsys</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">els</span><span class="p">))</span>
+                <span class="k">if</span> <span class="n">sub_chemsys</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">preparsed_info</span><span class="p">:</span>
+                    <span class="n">all_data</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">preparsed_info</span><span class="p">[</span><span class="n">sub_chemsys</span><span class="p">])</span>
+
+        <span class="n">file_map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_generate_file_map</span><span class="p">(</span><span class="n">all_data</span><span class="p">,</span> <span class="n">e_hull_filter</span><span class="p">,</span> <span class="n">exclude_gases</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">copy_files</span><span class="p">:</span>
+            <span class="n">copy_and_rename_files</span><span class="p">(</span><span class="n">file_map</span><span class="p">,</span> <span class="n">dest_dir</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">all_data</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="StructureDatabase.get_formula_data">
+<a class="viewcode-back" href="../../dara.structure_db.html#dara.structure_db.StructureDatabase.get_formula_data">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_formula_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">formula</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a list of database codes + info corresponding to a formula.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            formula: Chemical formula to search for.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">formula_reduced</span> <span class="o">=</span> <span class="n">Composition</span><span class="p">(</span><span class="n">formula</span><span class="p">)</span><span class="o">.</span><span class="n">reduced_formula</span>
+        <span class="n">chemsys</span> <span class="o">=</span> <span class="n">Composition</span><span class="p">(</span><span class="n">formula</span><span class="p">)</span><span class="o">.</span><span class="n">chemical_system</span>
+        <span class="n">db_chemsys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">preparsed_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">chemsys</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">db_chemsys</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No database codes found in chemical system: </span><span class="si">{</span><span class="n">db_chemsys</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">[]</span>
+
+        <span class="n">formula_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">db_chemsys</span> <span class="k">if</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">formula_reduced</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">formula_data</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No database codes found for </span><span class="si">{</span><span class="n">formula</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">[]</span>
+
+        <span class="k">return</span> <span class="n">formula_data</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_generate_file_map</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">all_data</span><span class="p">,</span>
+        <span class="n">e_hull_filter</span><span class="p">,</span>
+        <span class="n">exclude_gases</span><span class="p">,</span>
+        <span class="n">download_folder</span><span class="o">=</span><span class="s2">&quot;dara_downloaded_cifs&quot;</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;A mapping of database file paths to new file names with structure metadata included.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">local_copy_found</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="s2">&quot;Local copy of database not found. Attempting to download structures...&quot;</span>
+            <span class="p">)</span>
+            <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">download_structures</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">all_data</span><span class="p">],</span>
+                <span class="n">save</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">default_folder</span><span class="o">=</span><span class="n">download_folder</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="n">file_map</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">formula</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">sg</span><span class="p">,</span> <span class="n">e_hull</span> <span class="ow">in</span> <span class="n">all_data</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">exclude_gases</span> <span class="ow">and</span> <span class="n">formula</span> <span class="ow">in</span> <span class="n">COMMON_GASES</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Skipping common gas: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">formula</span><span class="p">)</span>
+                <span class="k">continue</span>
+
+            <span class="k">if</span> <span class="n">e_hull</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">e_hull</span> <span class="o">&gt;</span> <span class="n">e_hull_filter</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Skipping high-energy phase: </span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">formula</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">sg</span><span class="si">}</span><span class="s2">): e_hull = </span><span class="si">{</span><span class="n">e_hull</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+                <span class="k">continue</span>
+
+            <span class="n">e_hull_value</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">1000</span> <span class="o">*</span> <span class="n">e_hull</span><span class="p">)</span> <span class="k">if</span> <span class="n">e_hull</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
+
+            <span class="n">fp</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">code</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">local_copy_found</span>
+                <span class="k">else</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">download_folder</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s2">.cif&quot;</span>
+            <span class="p">)</span>
+            <span class="n">file_map</span><span class="p">[</span><span class="n">fp</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">formula</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">sg</span><span class="si">}</span><span class="s2">_(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s2">)-</span><span class="si">{</span><span class="n">e_hull_value</span><span class="si">}</span><span class="s2">.cif&quot;</span>
+
+        <span class="k">return</span> <span class="n">file_map</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">path</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Path to local copy of the structure database (i.e., the folder containing all</span>
+<span class="sd">        the relevant CIFs). Automatically uses the default path if not</span>
+<span class="sd">        provided.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_path_to_cifs</span>
+        <span class="k">if</span> <span class="n">p</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">default_folder_path</span>
+
+        <span class="k">return</span> <span class="n">Path</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">local_copy_found</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if a local copy of the database is found.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+
+<div class="viewcode-block" id="StructureDatabase.download_structures">
+<a class="viewcode-back" href="../../dara.structure_db.html#dara.structure_db.StructureDatabase.download_structures">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">download_structures</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">ids</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">default_folder</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Cif</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Download structures from the database.&quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="StructureDatabase.get_file_path">
+<a class="viewcode-back" href="../../dara.structure_db.html#dara.structure_db.StructureDatabase.get_file_path">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_file_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cif_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the path to a CIF file in the database from its database ID.&quot;&quot;&quot;</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Name of the database.&quot;&quot;&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">default_folder_path</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Default path to the folder containing the CIFs for the database.&quot;&quot;&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">preparsed_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Preparsed information about the database. This is used to quickly filter and</span>
+<span class="sd">        find structures based on chemical system, formula, etc. This has already been</span>
+<span class="sd">        generated via the code in the scripts folder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_preparsed_info</span></div>
+
+
+
+<div class="viewcode-block" id="CODDatabase">
+<a class="viewcode-back" href="../../dara.structure_db.html#dara.structure_db.CODDatabase">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">CODDatabase</span><span class="p">(</span><span class="n">StructureDatabase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class to interact with CIF files acquired from the COD database. This class uses</span>
+<span class="sd">    a parsed/filtered list of COD numbers that are automatically selected from when doing</span>
+<span class="sd">    phase searches (data/cod_filtered_info_2024.json.gz).</span>
+
+<span class="sd">    This class features a method to download CIFs from the online COD database, as well</span>
+<span class="sd">    as a method to get CIFs from a local copy of the database. To download the COD</span>
+<span class="sd">    database in a folder called COD_2024, run the following command (this may take a</span>
+<span class="sd">    while):</span>
+
+<span class="sd">        rsync -av --delete rsync://www.crystallography.net/cif/ COD_2024/</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path_to_cifs</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize an object for interacting with CIFs from the ICSD.</span>
+
+<span class="sd">        path_to_cifs: Path to a folder containing the CIFs for the database.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">path_to_cifs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_preparsed_info</span> <span class="o">=</span> <span class="n">loadfn</span><span class="p">(</span>
+            <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;data/cod_filtered_info_2024.json.gz&quot;</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="CODDatabase.download_structures">
+<a class="viewcode-back" href="../../dara.structure_db.html#dara.structure_db.CODDatabase.download_structures">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">download_structures</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">ids</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">save</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">default_folder</span><span class="o">=</span><span class="s2">&quot;downloaded_cod_cifs&quot;</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Cif</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Download structures from the COD database. Note that this downloads directly</span>
+<span class="sd">        from the COD website, so it may be slow. Please do not abuse this feature.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ids: List of COD IDs to download.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cifs</span> <span class="o">=</span> <span class="n">thread_map</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_download_cod</span><span class="p">,</span>
+            <span class="n">ids</span><span class="p">,</span>
+            <span class="n">chunksize</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">max_workers</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+            <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Downloading CIFs from COD...&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">save</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Saving downloaded CIFs to </span><span class="si">{</span><span class="n">default_folder</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">default_folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">default_folder</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">default_folder</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+                <span class="n">default_folder</span><span class="o">.</span><span class="n">mkdir</span><span class="p">()</span>
+
+            <span class="k">for</span> <span class="n">cif</span> <span class="ow">in</span> <span class="n">cifs</span><span class="p">:</span>
+                <span class="n">cif</span><span class="o">.</span><span class="n">to_file</span><span class="p">((</span><span class="n">default_folder</span> <span class="o">/</span> <span class="n">cif</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s2">&quot;.cif&quot;</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">cifs</span></div>
+
+
+<div class="viewcode-block" id="CODDatabase.get_file_path">
+<a class="viewcode-back" href="../../dara.structure_db.html#dara.structure_db.CODDatabase.get_file_path">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_file_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cif_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the path to a CIF file in the COD database.&quot;&quot;&quot;</span>
+        <span class="n">cod_id</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">cif_id</span><span class="p">)</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cod_id</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid COD ID provided (too long): </span><span class="si">{</span><span class="n">cod_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">/</span> <span class="n">cod_id</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">cod_id</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">/</span> <span class="n">cod_id</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cod_id</span><span class="si">}</span><span class="s2">.cif&quot;</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">default_folder_path</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Default path to the folder containing the CIFs for the COD database.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">PATH_TO_COD</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Name of the database.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="s2">&quot;cod&quot;</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_download_cod</span><span class="p">(</span><span class="n">cod_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Cif</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Download a COD file from its ID.&quot;&quot;&quot;</span>
+        <span class="n">COD_URL</span> <span class="o">=</span> <span class="s2">&quot;https://www.crystallography.net/cod/</span><span class="si">{cod_id}</span><span class="s2">.cif&quot;</span>
+        <span class="c1"># Get the content of the URL</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="n">COD_URL</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cod_id</span><span class="o">=</span><span class="n">cod_id</span><span class="p">)</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>  <span class="c1"># Raise an error for bad status codes</span>
+            <span class="k">with</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w+b&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">temp_file</span><span class="p">:</span>
+                <span class="n">temp_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+                <span class="n">temp_file</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+                <span class="n">cif</span> <span class="o">=</span> <span class="n">Cif</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">temp_file</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+            <span class="n">cif</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">cod_id</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to download </span><span class="si">{</span><span class="n">cod_id</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">raise</span>
+
+        <span class="k">return</span> <span class="n">cif</span></div>
+
+
+
+<div class="viewcode-block" id="ICSDDatabase">
+<a class="viewcode-back" href="../../dara.structure_db.html#dara.structure_db.ICSDDatabase">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ICSDDatabase</span><span class="p">(</span><span class="n">StructureDatabase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class to interact with CIF files acquired from the ICSD database. This class uses</span>
+<span class="sd">    a parsed/filtered list of ICSD_IDs that are automatically selected from when doing</span>
+<span class="sd">    phase searches (see data/icsd_filtered_info_2024_v2.json.gz). Here we assume you</span>
+<span class="sd">    have a folder containing relevant downloaded ICSD CIFs located at the</span>
+<span class="sd">    default path in DaraSettings. You can also configure the path in dara.yaml.</span>
+
+<span class="sd">    Each CIF file should be named &quot;icsd_&lt;id&gt;.cif&quot; where &lt;id&gt; is the ICSD code.</span>
+
+<span class="sd">    **Legal notice**: to use the ICSD database, you must purchase a paid license that allows</span>
+<span class="sd">    you to download and keep CIFs as a local copy. We do not provide any CIFs from the</span>
+<span class="sd">    ICSD and discourage any unpermitted use of the database that is inconsistent</span>
+<span class="sd">    with your license. Please visit https://icsd.products.fiz-karlsruhe.de/ for more</span>
+<span class="sd">    information. We are not liable for any misuse of the ICSD database.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path_to_cifs</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize an object for interacting with CIFs from the ICSD.</span>
+
+<span class="sd">        :param path_to_icsd: Path to the ICSD database</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">path_to_cifs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_preparsed_info</span> <span class="o">=</span> <span class="n">loadfn</span><span class="p">(</span>
+            <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;data/icsd_filtered_info_2025_v3.json.gz&quot;</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="ICSDDatabase.get_file_path">
+<a class="viewcode-back" href="../../dara.structure_db.html#dara.structure_db.ICSDDatabase.get_file_path">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_file_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cif_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the path to a CIF file in the ICSD database.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;icsd_</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_clean_icsd_code</span><span class="p">(</span><span class="n">cif_id</span><span class="p">)</span><span class="si">}</span><span class="s2">.cif&quot;</span></div>
+
+
+<div class="viewcode-block" id="ICSDDatabase.download_structures">
+<a class="viewcode-back" href="../../dara.structure_db.html#dara.structure_db.ICSDDatabase.download_structures">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">download_structures</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">ids</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">default_folder</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Cif</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Download structures from the ICSD database.&quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;Downloading from the online ICSD database will not be implemented. Please use a local copy of CIFs&quot;</span>
+            <span class="s2">&quot; acquired legally through your agreement.&quot;</span>
+        <span class="p">)</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Name of the database.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="s2">&quot;icsd&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">default_folder_path</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Default path to the folder containing the CIFs for the ICSD database.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">PATH_TO_ICSD</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_clean_icsd_code</span><span class="p">(</span><span class="n">icsd_code</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add leading zeros to the ICSD code.&quot;&quot;&quot;</span>
+        <span class="n">code</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">icsd_code</span><span class="p">))</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mi">6</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">code</span><span class="p">))</span> <span class="o">*</span> <span class="s2">&quot;0&quot;</span> <span class="o">+</span> <span class="n">code</span></div>
+
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yuxing Fei, Matthew J. McDermott
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, Ceder Group.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

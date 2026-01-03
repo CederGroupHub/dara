@@ -445,12 +445,12 @@
 <p>An interface for rxn_network for predicting products in a chemical reaction.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="dara.prediction.rn.ReactionNetworkEngine">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ReactionNetworkEngine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cost_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'weighted_sum'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rereact</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.prediction.rn.ReactionNetworkEngine" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ReactionNetworkEngine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cost_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'weighted_sum'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rereact</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/prediction/rn.html#ReactionNetworkEngine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.prediction.rn.ReactionNetworkEngine" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="dara.prediction.base.html#dara.prediction.base.PredictionEngine" title="dara.prediction.base.PredictionEngine"><code class="xref py py-class docutils literal notranslate"><span class="pre">PredictionEngine</span></code></a></p>
 <p>Engine for predicting products in a chemical reaction.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="dara.prediction.rn.ReactionNetworkEngine.predict">
-<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">precursors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">computed_entries</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_elem</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chempot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e_hull_cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.prediction.rn.ReactionNetworkEngine.predict" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">precursors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">computed_entries</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_elem</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chempot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e_hull_cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/prediction/rn.html#ReactionNetworkEngine.predict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.prediction.rn.ReactionNetworkEngine.predict" title="Link to this definition">#</a></dt>
 <dd><p>Interface with reaction-network package for phase prediction based on interface
 reaction hulls.</p>
 <dl class="field-list simple">
@@ -477,7 +477,7 @@ all entries with an E_hull &lt;= 50 meV/atom.)</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="dara.prediction.rn.get_entry_by_formula">
-<span class="sig-name descname"><span class="pre">get_entry_by_formula</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gibbs_entries</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formula</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.prediction.rn.get_entry_by_formula" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_entry_by_formula</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gibbs_entries</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formula</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/prediction/rn.html#get_entry_by_formula"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.prediction.rn.get_entry_by_formula" title="Link to this definition">#</a></dt>
 <dd><p>Either returns the minimum energy entry or a new interpolated entry.</p>
 </dd></dl>
 
@@ -558,7 +558,7 @@ By Yuxing Fei, Matthew J. McDermott
 
   <p class="copyright">
     
-      © Copyright 2025, Ceder Group.
+      © Copyright 2026, Ceder Group.
       <br/>
     
   </p>

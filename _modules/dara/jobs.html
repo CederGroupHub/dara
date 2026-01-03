@@ -1,0 +1,813 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dara.jobs &#8212; Dara Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/autodoc_pydantic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=877af9a5"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dara/jobs';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="icon" href="../../_static/logo.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="1.1.4" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo-wide.svg" class="logo__image only-light" alt="Dara Documentation - Home"/>
+    <img src="../../_static/logo-wide-dark.svg" class="logo__image only-dark pst-js-only" alt="Dara Documentation - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/idocx/dara" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web_server.html">Web Server</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorials.html">Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/automated_refinement.html">1. Automated refinement with BGMN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/phase_search.html">2. Phase analysis with tree search</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">API Docs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../dara.html">dara package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../dara.bgmn.html">dara.bgmn package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.bgmn.download_bgmn.html">dara.bgmn.download_bgmn module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.data.html">dara.data package</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../dara.prediction.html">dara.prediction package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.prediction.base.html">dara.prediction.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.prediction.core.html">dara.prediction.core module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.prediction.rn.html">dara.prediction.rn module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.prediction.rxn_ca.html">dara.prediction.rxn_ca module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../dara.search.html">dara.search package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.search.core.html">dara.search.core module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.search.data_model.html">dara.search.data_model module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.search.peak_matcher.html">dara.search.peak_matcher module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.search.tree.html">dara.search.tree module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../dara.server.html">dara.server package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.server.api_router.html">dara.server.api_router module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.server.app.html">dara.server.app module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.server.setting.html">dara.server.setting module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.server.utils.html">dara.server.utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.server.worker.html">dara.server.worker module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.bgmn_worker.html">dara.bgmn_worker module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.cif.html">dara.cif module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.cif2str.html">dara.cif2str module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.cli.html">dara.cli module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.eflech_worker.html">dara.eflech_worker module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.generate_control_file.html">dara.generate_control_file module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.jobs.html">dara.jobs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.peak_detection.html">dara.peak_detection module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.plot.html">dara.plot module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.refine.html">dara.refine module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.result.html">dara.result module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.schema.html">dara.schema module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.settings.html">dara.settings module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.structure_db.html">dara.structure_db module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.utils.html">dara.utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.xrd.html">dara.xrd module</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/idocx/dara" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for dara.jobs</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Jobflow jobs for DARA.&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">monty.serialization</span><span class="w"> </span><span class="kn">import</span> <span class="n">dumpfn</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pymatgen.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">Composition</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">dara.cif</span><span class="w"> </span><span class="kn">import</span> <span class="n">Cif</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dara.prediction.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">PhasePredictor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dara.refine</span><span class="w"> </span><span class="kn">import</span> <span class="n">RefinementPhase</span><span class="p">,</span> <span class="n">do_refinement</span><span class="p">,</span> <span class="n">do_refinement_no_saving</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dara.schema</span><span class="w"> </span><span class="kn">import</span> <span class="n">PhaseSearchDocument</span><span class="p">,</span> <span class="n">RefinementDocument</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dara.search</span><span class="w"> </span><span class="kn">import</span> <span class="n">search_phases</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dara.search.data_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">SearchResult</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dara.structure_db</span><span class="w"> </span><span class="kn">import</span> <span class="n">CODDatabase</span><span class="p">,</span> <span class="n">StructureDatabase</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dara.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_logger</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">dara.xrd</span><span class="w"> </span><span class="kn">import</span> <span class="n">XRDData</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">jobflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">Maker</span><span class="p">,</span> <span class="n">job</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+        <span class="s2">&quot;Please install jobflow to use the dara jobs module! (pip install &#39;dara[jobflow]&#39;)&quot;</span>
+    <span class="p">)</span>
+
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">get_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="RefinementMaker">
+<a class="viewcode-back" href="../../dara.jobs.html#dara.jobs.RefinementMaker">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">RefinementMaker</span><span class="p">(</span><span class="n">Maker</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Maker to create a job for performing Rietveld refinement using BGMN.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        name: The name of the job. This is automatically created if not provided.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;refine&quot;</span>
+    <span class="n">save</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">refinement_params</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">show_progress</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+
+<div class="viewcode-block" id="RefinementMaker.make">
+<a class="viewcode-back" href="../../dara.jobs.html#dara.jobs.RefinementMaker.make">[docs]</a>
+    <span class="nd">@job</span><span class="p">(</span><span class="n">output_schema</span><span class="o">=</span><span class="n">RefinementDocument</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">make</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">xrd_data</span><span class="p">:</span> <span class="n">XRDData</span><span class="p">,</span>
+        <span class="n">cifs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Cif</span><span class="p">],</span>
+        <span class="n">phase_params</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">instrument_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Aeris-fds-Pixcel1d-Medipix3&quot;</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Perform Rietveld refinement.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            xrd_data: _description_</span>
+<span class="sd">            cifs: _description_</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            _description_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">pattern_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;xrd_data.xy&quot;</span><span class="p">)</span>
+        <span class="n">xrd_data</span><span class="o">.</span><span class="n">to_xy_file</span><span class="p">(</span><span class="n">pattern_path</span><span class="p">)</span>
+
+        <span class="n">phase_paths</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">cif</span> <span class="ow">in</span> <span class="n">cifs</span><span class="p">:</span>
+            <span class="n">cif_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">cif</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span><span class="si">}</span><span class="s2">.cif&quot;</span><span class="p">)</span>
+            <span class="n">phase_paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cif_path</span><span class="p">)</span>
+
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">cif_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">cif</span><span class="p">))</span>
+
+        <span class="n">args</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;pattern_path&quot;</span><span class="p">:</span> <span class="n">pattern_path</span><span class="p">,</span>
+            <span class="s2">&quot;phase_paths&quot;</span><span class="p">:</span> <span class="n">phase_paths</span><span class="p">,</span>
+            <span class="s2">&quot;instrument_name&quot;</span><span class="p">:</span> <span class="n">instrument_name</span><span class="p">,</span>
+            <span class="s2">&quot;phase_params&quot;</span><span class="p">:</span> <span class="n">phase_params</span><span class="p">,</span>
+            <span class="s2">&quot;refinement_params&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">refinement_params</span><span class="p">,</span>
+            <span class="s2">&quot;show_progress&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_progress</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="n">do_refinement</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">save</span> <span class="k">else</span> <span class="n">do_refinement_no_saving</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">RefinementDocument</span><span class="p">(</span>
+            <span class="n">task_label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">result</span><span class="o">=</span><span class="n">result</span><span class="p">,</span>
+            <span class="n">rwp</span><span class="o">=</span><span class="n">result</span><span class="o">.</span><span class="n">lst_data</span><span class="o">.</span><span class="n">rwp</span><span class="p">,</span>
+            <span class="n">xrd_data</span><span class="o">=</span><span class="n">xrd_data</span><span class="p">,</span>
+            <span class="n">input_cifs</span><span class="o">=</span><span class="n">cifs</span><span class="p">,</span>
+            <span class="n">refinement_params</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">refinement_params</span><span class="p">,</span>
+            <span class="n">phase_params</span><span class="o">=</span><span class="n">phase_params</span><span class="p">,</span>
+            <span class="n">instrument_name</span><span class="o">=</span><span class="n">instrument_name</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="PhaseSearchMaker">
+<a class="viewcode-back" href="../../dara.jobs.html#dara.jobs.PhaseSearchMaker">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">PhaseSearchMaker</span><span class="p">(</span><span class="n">Maker</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Maker to create a job for performing phase search using BGMN.&quot;&quot;&quot;</span>
+
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;phase_search&quot;</span>
+    <span class="n">phase_predictor</span><span class="p">:</span> <span class="n">PhasePredictor</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">PhasePredictor</span><span class="p">)</span>
+    <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">run_final_refinement</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">cifs_folder_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;dara_cifs&quot;</span>
+    <span class="n">max_num_results</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="mi">10</span>
+
+<div class="viewcode-block" id="PhaseSearchMaker.make">
+<a class="viewcode-back" href="../../dara.jobs.html#dara.jobs.PhaseSearchMaker.make">[docs]</a>
+    <span class="nd">@job</span><span class="p">(</span><span class="n">output_schema</span><span class="o">=</span><span class="n">PhaseSearchDocument</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">make</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">xrd_data</span><span class="p">:</span> <span class="n">XRDData</span><span class="p">,</span>
+        <span class="n">cifs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Cif</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">cif_dbs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">StructureDatabase</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">additional_cifs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Cif</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">additional_cif_params</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">precursors</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">predict_kwargs</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">search_kwargs</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">final_refinement_params</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">computed_entries</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Perform phase search.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            xrd_data: the XRD pattern</span>
+<span class="sd">            cifs: A list of CIFs to search against. WARNING: If provided, phase</span>
+<span class="sd">                prediction and CIF download from DBs will be skipped. If you want to</span>
+<span class="sd">                provide additional CIFs to a database result, use &quot;additional_cifs&quot;.</span>
+<span class="sd">            cif_dbs: A list of CIF databases to search against; if not provided, will</span>
+<span class="sd">                default to using the COD database.</span>
+<span class="sd">            additional_cifs: Additional CIFs to include in the search. These are added</span>
+<span class="sd">                to the CIFs from the database.</span>
+<span class="sd">            additional_cif_params: Additional parameters for the CIFs, it will overwrite</span>
+<span class="sd">                the default parameters in the refinement.</span>
+<span class="sd">            precursors: A list of precursor formulas to predict phases for.</span>
+<span class="sd">            predict_kwargs: Keyword arguments for the phase predictor.</span>
+<span class="sd">            search_kwargs: Keyword arguments for the search.</span>
+<span class="sd">            final_refinement_params: Parameters for the final refinement.</span>
+<span class="sd">            computed_entries: Computed entries to use for phase prediction.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">directory</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">predict_kwargs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">predict_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="n">search_kwargs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">search_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1"># for backward compatibility</span>
+        <span class="c1"># the instrument_name is now instrument_profile</span>
+        <span class="k">if</span> <span class="s2">&quot;instrument_name&quot;</span> <span class="ow">in</span> <span class="n">search_kwargs</span><span class="p">:</span>
+            <span class="n">search_kwargs</span><span class="p">[</span><span class="s2">&quot;instrument_profile&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">search_kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;instrument_name&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">final_refinement_params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">final_refinement_params</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;gewicht&quot;</span><span class="p">:</span> <span class="s2">&quot;SPHAR4&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;lattice_range&quot;</span><span class="p">:</span> <span class="mf">0.02</span><span class="p">,</span>
+                <span class="s2">&quot;k1&quot;</span><span class="p">:</span> <span class="s2">&quot;0_0^1&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;k2&quot;</span><span class="p">:</span> <span class="s2">&quot;0_0^0.001&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;b1&quot;</span><span class="p">:</span> <span class="s2">&quot;0_0^0.05&quot;</span><span class="p">,</span>
+            <span class="p">}</span>
+
+        <span class="n">pattern_path</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span> <span class="s2">&quot;xrd_data.xy&quot;</span>
+        <span class="n">cifs_path</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">cifs_folder_name</span>
+        <span class="k">if</span> <span class="n">cifs_path</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Removing existing CIFs directory, located at: </span><span class="si">{</span><span class="n">cifs_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">cifs_path</span><span class="p">)</span>
+
+        <span class="n">cifs_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">()</span>
+
+        <span class="n">xrd_data</span><span class="o">.</span><span class="n">to_xy_file</span><span class="p">(</span><span class="n">pattern_path</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">precursors</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">precursors</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">if</span> <span class="n">cifs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;CIFs provided. Skipping CIF download and phase prediction.&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">cif</span> <span class="ow">in</span> <span class="n">cifs</span> <span class="o">+</span> <span class="p">(</span><span class="n">additional_cifs</span> <span class="ow">or</span> <span class="p">[]):</span>
+                <span class="n">cp</span> <span class="o">=</span> <span class="n">cifs_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cif</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.cif&quot;</span>
+
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">cp</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">cif</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">precursors</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Must provide either precursors or a set of CIFs!&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">cif_dbs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">cif_dbs</span> <span class="o">=</span> <span class="p">[</span><span class="n">CODDatabase</span><span class="p">()]</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase_predictor</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                    <span class="s2">&quot;Phase prediction disabled; using all ICSD phases in the chemical system.&quot;</span>
+                <span class="p">)</span>
+                <span class="n">elems</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="nb">str</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">precursors</span> <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">Composition</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">.</span><span class="n">elements</span>
+                <span class="p">}</span>
+                <span class="k">for</span> <span class="n">db</span> <span class="ow">in</span> <span class="n">cif_dbs</span><span class="p">:</span>
+                    <span class="n">db</span><span class="o">.</span><span class="n">get_cifs_by_chemsys</span><span class="p">(</span>
+                        <span class="n">elems</span><span class="p">,</span> <span class="n">copy_files</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dest_dir</span><span class="o">=</span><span class="n">cifs_path</span><span class="o">.</span><span class="n">as_posix</span><span class="p">()</span>
+                    <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Predicting phases...&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">phase_predictor</span><span class="o">.</span><span class="n">cif_dbs</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">cif_dbs</span>  <span class="c1"># ensure CIF databases match as provided in job</span>
+                <span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_predict_folder</span><span class="p">(</span>
+                    <span class="n">precursors</span><span class="p">,</span>
+                    <span class="n">cifs_path</span><span class="o">=</span><span class="n">cifs_path</span><span class="p">,</span>
+                    <span class="n">computed_entries</span><span class="o">=</span><span class="n">computed_entries</span><span class="p">,</span>
+                    <span class="o">**</span><span class="n">predict_kwargs</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="n">additional_cifs</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">cif</span> <span class="ow">in</span> <span class="n">additional_cifs</span><span class="p">:</span>
+                    <span class="n">cp</span> <span class="o">=</span> <span class="n">cifs_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cif</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.cif&quot;</span>
+                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">cp</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">cif</span><span class="p">))</span>
+
+        <span class="n">cif_paths</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">cifs_path</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.cif&quot;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">additional_cifs</span><span class="p">:</span>
+            <span class="n">additional_cifs_name_set</span> <span class="o">=</span> <span class="p">{</span><span class="n">cif</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">cif</span> <span class="ow">in</span> <span class="n">additional_cifs</span><span class="p">}</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cif_paths</span><span class="p">)):</span>
+                <span class="k">if</span> <span class="n">cif_paths</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stem</span> <span class="ow">in</span> <span class="n">additional_cifs_name_set</span><span class="p">:</span>
+                    <span class="n">cif_paths</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">RefinementPhase</span><span class="p">(</span>
+                        <span class="n">path</span><span class="o">=</span><span class="n">cif_paths</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">params</span><span class="o">=</span><span class="n">additional_cif_params</span> <span class="ow">or</span> <span class="p">{}</span>
+                    <span class="p">)</span>
+
+        <span class="n">results</span> <span class="o">=</span> <span class="n">search_phases</span><span class="p">(</span>
+            <span class="n">pattern_path</span><span class="o">=</span><span class="n">pattern_path</span><span class="p">,</span> <span class="n">phases</span><span class="o">=</span><span class="n">cif_paths</span><span class="p">,</span> <span class="o">**</span><span class="n">search_kwargs</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_save_results</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+        <span class="n">results</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">refinement_result</span><span class="o">.</span><span class="n">lst_data</span><span class="o">.</span><span class="n">rwp</span><span class="p">)[</span>
+            <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_num_results</span>
+        <span class="p">]</span>
+
+        <span class="n">best_result</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_final_refinement</span> <span class="ow">and</span> <span class="n">results</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Re-refining best result...&quot;</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+                <span class="k">if</span> <span class="p">(</span>
+                    <span class="s2">&quot;1_result_rwp&quot;</span> <span class="ow">in</span> <span class="n">item</span>
+                    <span class="ow">and</span> <span class="s2">&quot;rwp&quot;</span> <span class="ow">in</span> <span class="n">item</span>
+                    <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">directory</span> <span class="o">/</span> <span class="n">item</span><span class="p">)</span>
+                <span class="p">):</span>
+                    <span class="n">best_dir</span> <span class="o">=</span> <span class="n">item</span>
+                    <span class="k">break</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Best refinement not found!&quot;</span><span class="p">)</span>
+
+            <span class="n">best_dir_path</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span> <span class="s2">&quot;0_best&quot;</span>
+            <span class="k">if</span> <span class="n">best_dir_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+                <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">best_dir_path</span><span class="p">)</span>
+
+            <span class="n">shutil</span><span class="o">.</span><span class="n">copytree</span><span class="p">(</span><span class="n">directory</span> <span class="o">/</span> <span class="n">best_dir</span><span class="p">,</span> <span class="n">best_dir_path</span><span class="p">)</span>
+            <span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">pattern_path</span><span class="p">,</span> <span class="n">best_dir_path</span><span class="p">)</span>
+            <span class="n">dumpfn</span><span class="p">(</span><span class="n">final_refinement_params</span><span class="p">,</span> <span class="n">best_dir_path</span> <span class="o">/</span> <span class="s2">&quot;phase_params.json&quot;</span><span class="p">)</span>
+
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Performing final refinement on best result...&quot;</span><span class="p">)</span>
+            <span class="n">best_phases</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">foms</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">phases</span><span class="p">,</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">foms</span><span class="p">):</span>
+                <span class="n">best_phases</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">foms</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">best_result</span> <span class="o">=</span> <span class="n">do_refinement</span><span class="p">(</span>
+                <span class="n">pattern_path</span><span class="o">=</span><span class="n">best_dir_path</span> <span class="o">/</span> <span class="s2">&quot;xrd_data.xy&quot;</span><span class="p">,</span>
+                <span class="n">phases</span><span class="o">=</span><span class="n">best_phases</span><span class="p">,</span>
+                <span class="n">phase_params</span><span class="o">=</span><span class="n">final_refinement_params</span><span class="p">,</span>
+                <span class="n">show_progress</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">search_kwargs</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">new_best_dir_path</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">best_dir_path</span><span class="p">)</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;_rwp_</span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">best_result</span><span class="o">.</span><span class="n">lst_data</span><span class="o">.</span><span class="n">rwp</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">new_best_dir_path</span><span class="p">):</span>
+                <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">new_best_dir_path</span><span class="p">)</span>
+
+            <span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">best_dir_path</span><span class="p">,</span> <span class="n">new_best_dir_path</span><span class="p">)</span>
+
+        <span class="n">parsed_results</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="p">[</span><span class="n">Cif</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">phase</span><span class="o">.</span><span class="n">path</span><span class="p">)</span> <span class="k">for</span> <span class="n">phase</span> <span class="ow">in</span> <span class="n">phases</span><span class="p">]</span>
+                    <span class="k">for</span> <span class="n">phases</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">phases</span>
+                <span class="p">],</span>
+                <span class="n">result</span><span class="o">.</span><span class="n">refinement_result</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span>
+        <span class="p">]</span>
+        <span class="n">grouped_phases</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">grouped_phases</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
+
+        <span class="c1"># convert Path to str</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">grouped_phases</span><span class="p">)):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">grouped_phases</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>
+                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">grouped_phases</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])):</span>
+                    <span class="n">grouped_phases</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                        <span class="n">grouped_phases</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                        <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">stem</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">grouped_phases</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">][</span><span class="mi">1</span><span class="p">]],</span>
+                    <span class="p">)</span>
+
+        <span class="n">foms</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">list</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">foms</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
+        <span class="n">lattice_strains</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">list</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span> <span class="k">for</span> <span class="n">ls</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">lattice_strains</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
+        <span class="n">missing_peaks</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">missing_peaks</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
+        <span class="n">extra_peaks</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">extra_peaks</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
+
+        <span class="n">all_rwp</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lst_data</span><span class="o">.</span><span class="n">rwp</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">parsed_results</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_final_refinement</span> <span class="ow">and</span> <span class="n">best_result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">all_rwp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">best_result</span><span class="o">.</span><span class="n">lst_data</span><span class="o">.</span><span class="n">rwp</span><span class="p">)</span>
+
+        <span class="n">best_rwp</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">all_rwp</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">PhaseSearchDocument</span><span class="p">(</span>
+            <span class="n">task_label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">results</span><span class="o">=</span><span class="n">parsed_results</span><span class="p">,</span>
+            <span class="n">foms</span><span class="o">=</span><span class="n">foms</span><span class="p">,</span>
+            <span class="n">lattice_strains</span><span class="o">=</span><span class="n">lattice_strains</span><span class="p">,</span>
+            <span class="n">missing_peaks</span><span class="o">=</span><span class="n">missing_peaks</span><span class="p">,</span>
+            <span class="n">extra_peaks</span><span class="o">=</span><span class="n">extra_peaks</span><span class="p">,</span>
+            <span class="n">final_result</span><span class="o">=</span><span class="n">best_result</span><span class="p">,</span>
+            <span class="n">best_rwp</span><span class="o">=</span><span class="n">best_rwp</span><span class="p">,</span>
+            <span class="n">xrd_data</span><span class="o">=</span><span class="n">xrd_data</span><span class="p">,</span>
+            <span class="n">input_cifs</span><span class="o">=</span><span class="n">cifs</span><span class="p">,</span>
+            <span class="n">precursors</span><span class="o">=</span><span class="n">precursors</span><span class="p">,</span>
+            <span class="n">phase_predictor</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">phase_predictor</span><span class="p">,</span>
+            <span class="n">predict_kwargs</span><span class="o">=</span><span class="n">predict_kwargs</span><span class="p">,</span>
+            <span class="n">search_kwargs</span><span class="o">=</span><span class="n">search_kwargs</span><span class="p">,</span>
+            <span class="n">final_refinement_params</span><span class="o">=</span><span class="n">final_refinement_params</span><span class="p">,</span>
+            <span class="n">run_final_refinement</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">run_final_refinement</span><span class="p">,</span>
+            <span class="n">cifs_folder_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cifs_folder_name</span><span class="p">,</span>
+            <span class="n">grouped_phases</span><span class="o">=</span><span class="n">grouped_phases</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_predict_folder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">precursors</span><span class="p">,</span> <span class="n">cifs_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase_predictor</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Phase predictor not provided!&quot;</span><span class="p">)</span>
+
+        <span class="n">prediction</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase_predictor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">precursors</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">dumpfn</span><span class="p">(</span><span class="n">prediction</span><span class="p">,</span> <span class="s2">&quot;prediction.json&quot;</span><span class="p">)</span>
+        <span class="n">cost_cutoff</span> <span class="o">=</span> <span class="mf">0.1</span>
+
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="s2">&quot;CO3&quot;</span> <span class="ow">in</span> <span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">precursors</span><span class="p">):</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">&quot;Carbonate compound detected, raising cost threshold to account for &quot;</span>
+                <span class="s2">&quot;incorrectly modeled thermodynamics of CO2 production.&quot;</span>
+            <span class="p">)</span>
+            <span class="n">cost_cutoff</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">phase_predictor</span><span class="o">.</span><span class="n">write_cifs_from_formulas</span><span class="p">(</span>
+            <span class="n">prediction</span><span class="p">,</span> <span class="n">dest_dir</span><span class="o">=</span><span class="n">cifs_path</span><span class="p">,</span> <span class="n">cost_cutoff</span><span class="o">=</span><span class="n">cost_cutoff</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">prediction</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_save_results</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">results</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">SearchResult</span><span class="p">]):</span>
+        <span class="n">results_sorted</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">refinement_result</span><span class="o">.</span><span class="n">lst_data</span><span class="o">.</span><span class="n">rwp</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">search_result</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">results_sorted</span><span class="p">):</span>
+            <span class="n">phases</span> <span class="o">=</span> <span class="n">search_result</span><span class="o">.</span><span class="n">phases</span>
+            <span class="n">main_folder</span> <span class="o">=</span> <span class="n">phases</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span>
+
+            <span class="n">rwp</span> <span class="o">=</span> <span class="n">search_result</span><span class="o">.</span><span class="n">refinement_result</span><span class="o">.</span><span class="n">lst_data</span><span class="o">.</span><span class="n">rwp</span>
+            <span class="n">folder_path</span> <span class="o">=</span> <span class="n">main_folder</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">_result_rwp_</span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">rwp</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+
+            <span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">main_folder</span><span class="p">):</span>
+                <span class="k">if</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">_result_rwp&quot;</span> <span class="ow">in</span> <span class="n">fn</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">main_folder</span> <span class="o">/</span> <span class="n">fn</span><span class="p">):</span>
+                        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">main_folder</span> <span class="o">/</span> <span class="n">fn</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">main_folder</span> <span class="o">/</span> <span class="n">fn</span><span class="p">)</span>
+
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Removing old result: </span><span class="si">{</span><span class="n">fn</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">folder_path</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">phase_i</span><span class="p">,</span> <span class="n">phases_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">phases</span><span class="p">):</span>
+                <span class="n">phase_folder</span> <span class="o">=</span> <span class="n">folder_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;phase_</span><span class="si">{</span><span class="n">phase_i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="n">phase_folder</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">phase</span> <span class="ow">in</span> <span class="n">phases_</span><span class="p">:</span>
+                    <span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">phase</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="n">phase_folder</span><span class="p">)</span>
+
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Successfully saved result </span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yuxing Fei, Matthew J. McDermott
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, Ceder Group.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

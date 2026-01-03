@@ -1,0 +1,1015 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dara.result &#8212; Dara Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/autodoc_pydantic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=877af9a5"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/dara/result';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="icon" href="../../_static/logo.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="1.1.4" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo-wide.svg" class="logo__image only-light" alt="Dara Documentation - Home"/>
+    <img src="../../_static/logo-wide-dark.svg" class="logo__image only-dark pst-js-only" alt="Dara Documentation - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/idocx/dara" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web_server.html">Web Server</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorials.html">Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/automated_refinement.html">1. Automated refinement with BGMN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/phase_search.html">2. Phase analysis with tree search</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">API Docs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../dara.html">dara package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../dara.bgmn.html">dara.bgmn package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.bgmn.download_bgmn.html">dara.bgmn.download_bgmn module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.data.html">dara.data package</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../dara.prediction.html">dara.prediction package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.prediction.base.html">dara.prediction.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.prediction.core.html">dara.prediction.core module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.prediction.rn.html">dara.prediction.rn module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.prediction.rxn_ca.html">dara.prediction.rxn_ca module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../dara.search.html">dara.search package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.search.core.html">dara.search.core module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.search.data_model.html">dara.search.data_model module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.search.peak_matcher.html">dara.search.peak_matcher module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.search.tree.html">dara.search.tree module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../dara.server.html">dara.server package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.server.api_router.html">dara.server.api_router module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.server.app.html">dara.server.app module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.server.setting.html">dara.server.setting module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.server.utils.html">dara.server.utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dara.server.worker.html">dara.server.worker module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.bgmn_worker.html">dara.bgmn_worker module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.cif.html">dara.cif module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.cif2str.html">dara.cif2str module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.cli.html">dara.cli module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.eflech_worker.html">dara.eflech_worker module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.generate_control_file.html">dara.generate_control_file module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.jobs.html">dara.jobs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.peak_detection.html">dara.peak_detection module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.plot.html">dara.plot module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.refine.html">dara.refine module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.result.html">dara.result module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.schema.html">dara.schema module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.settings.html">dara.settings module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.structure_db.html">dara.structure_db module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.utils.html">dara.utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dara.xrd.html">dara.xrd module</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/idocx/dara" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for dara.result</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;The parser for the result from the refinement.&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">ConfigDict</span><span class="p">,</span> <span class="n">Field</span><span class="p">,</span> <span class="n">field_validator</span><span class="p">,</span> <span class="n">model_validator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pymatgen.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">Composition</span><span class="p">,</span> <span class="n">Lattice</span><span class="p">,</span> <span class="n">Structure</span><span class="p">,</span> <span class="n">get_el_sp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pymatgen.symmetry.groups</span><span class="w"> </span><span class="kn">import</span> <span class="n">SpaceGroup</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">dara.plot</span><span class="w"> </span><span class="kn">import</span> <span class="n">visualize</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dara.utils</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">angular_correction</span><span class="p">,</span>
+    <span class="n">get_number</span><span class="p">,</span>
+    <span class="n">get_wavelength</span><span class="p">,</span>
+    <span class="n">intensity_correction</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+
+<div class="viewcode-block" id="PhaseResult">
+<a class="viewcode-back" href="../../dara.result.html#dara.result.PhaseResult">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PhaseResult</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The result for each phase.&quot;&quot;&quot;</span>
+
+    <span class="n">model_config</span> <span class="o">=</span> <span class="n">ConfigDict</span><span class="p">(</span><span class="n">extra</span><span class="o">=</span><span class="s2">&quot;allow&quot;</span><span class="p">,</span> <span class="n">populate_by_name</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">spacegroup_no</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">alias</span><span class="o">=</span><span class="s2">&quot;SpacegroupNo&quot;</span><span class="p">)</span>
+    <span class="n">hermann_mauguin</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">alias</span><span class="o">=</span><span class="s2">&quot;HermannMauguin&quot;</span><span class="p">)</span>
+    <span class="n">xray_density</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">alias</span><span class="o">=</span><span class="s2">&quot;XrayDensity&quot;</span><span class="p">)</span>
+    <span class="n">rphase</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">alias</span><span class="o">=</span><span class="s2">&quot;Rphase&quot;</span><span class="p">)</span>
+    <span class="n">unit</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">alias</span><span class="o">=</span><span class="s2">&quot;UNIT&quot;</span><span class="p">)</span>
+    <span class="n">gewicht</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">alias</span><span class="o">=</span><span class="s2">&quot;GEWICHT&quot;</span><span class="p">)</span>
+    <span class="n">gewicht_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">alias</span><span class="o">=</span><span class="s2">&quot;GEWICHT_NAME&quot;</span><span class="p">)</span>
+
+    <span class="n">a</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+    <span class="n">b</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+    <span class="n">c</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
+    <span class="n">alpha</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;ALPHA&quot;</span><span class="p">)</span>
+    <span class="n">beta</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;BETA&quot;</span><span class="p">)</span>
+    <span class="n">gamma</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;GAMMA&quot;</span><span class="p">)</span>
+
+    <span class="n">atom_positions_string</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="kc">None</span><span class="p">,</span> <span class="n">alias</span><span class="o">=</span><span class="s2">&quot;Atomic positions for phase&quot;</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="PhaseResult.check_gewicht">
+<a class="viewcode-back" href="../../dara.result.html#dara.result.PhaseResult.check_gewicht">[docs]</a>
+    <span class="nd">@model_validator</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">&quot;before&quot;</span><span class="p">)</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">check_gewicht</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s2">&quot;GEWICHT&quot;</span> <span class="ow">in</span> <span class="n">values</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="s2">&quot;GEWICHT&quot;</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">geweicht</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="s2">&quot;GEWICHT&quot;</span><span class="p">]</span>
+            <span class="n">geweicht_mean</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\d+\.\d+)&quot;</span><span class="p">,</span> <span class="n">geweicht</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+            <span class="n">geweicht_name</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^([A-Z\d]+)&quot;</span><span class="p">,</span> <span class="n">geweicht</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">values</span><span class="p">[</span><span class="s2">&quot;GEWICHT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">geweicht_mean</span>
+            <span class="n">values</span><span class="p">[</span><span class="s2">&quot;GEWICHT_NAME&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">geweicht_name</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">values</span><span class="p">[</span><span class="s2">&quot;GEWICHT_NAME&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">values</span></div>
+
+
+<div class="viewcode-block" id="PhaseResult.get_structure">
+<a class="viewcode-back" href="../../dara.result.html#dara.result.PhaseResult.get_structure">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Structure</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the refined structure from the phase result.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            the refined structure as ``pymatgen.Structure`` object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">atom_positions_string</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Cannot find the atomic positions from the phase result. &quot;</span>
+                <span class="s2">&quot;Please make sure the result is refined using dara &gt;= 0.9.1&quot;</span>
+            <span class="p">)</span>
+        <span class="c1"># get lattice</span>
+        <span class="n">lattice_data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">,</span>
+            <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">,</span>
+            <span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="p">,</span>
+            <span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="p">,</span>
+            <span class="s2">&quot;beta&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">beta</span><span class="p">,</span>
+            <span class="s2">&quot;gamma&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">gamma</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">lattice_data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">k</span><span class="p">:</span> <span class="n">get_number</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">lattice_data</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">lattice_data</span><span class="p">:</span>
+                <span class="n">lattice_data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">lattice_data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span>
+        <span class="n">spacegroup</span> <span class="o">=</span> <span class="n">SpaceGroup</span><span class="o">.</span><span class="n">from_int_number</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">spacegroup_no</span><span class="p">)</span>
+        <span class="n">crystal_system</span> <span class="o">=</span> <span class="n">spacegroup</span><span class="o">.</span><span class="n">crystal_system</span>
+        <span class="k">if</span> <span class="n">crystal_system</span> <span class="o">==</span> <span class="s2">&quot;trigonal&quot;</span><span class="p">:</span>
+            <span class="n">crystal_system</span> <span class="o">=</span> <span class="s2">&quot;hexagonal&quot;</span>
+        <span class="n">lattice</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">Lattice</span><span class="p">,</span> <span class="n">crystal_system</span><span class="p">,</span> <span class="n">Lattice</span><span class="o">.</span><span class="n">from_parameters</span><span class="p">)(</span>
+            <span class="o">**</span><span class="n">lattice_data</span>
+        <span class="p">)</span>
+
+        <span class="c1"># get species and coords</span>
+        <span class="n">all_coords</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">all_species</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">atom_positions_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+            <span class="n">coords</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]]</span>
+            <span class="n">all_coords</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span>
+
+            <span class="n">species</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">specie_stirng</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;E=\((.+)\)&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">group</span><span class="p">(</span>
+                <span class="mi">1</span>
+            <span class="p">)</span>  <span class="c1"># Sp(Occ), Sp(Occ), ...</span>
+            <span class="k">for</span> <span class="n">specie</span> <span class="ow">in</span> <span class="n">specie_stirng</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">):</span>
+                <span class="n">specie_string</span> <span class="o">=</span> <span class="n">specie</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;(&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+                <span class="c1"># parse the specie into pymatgen Species</span>
+                <span class="n">specie_string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([+-])(\d+)&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;\2\1&quot;</span><span class="p">,</span> <span class="n">specie_string</span><span class="p">)</span>
+                <span class="n">sp</span> <span class="o">=</span> <span class="n">get_el_sp</span><span class="p">(</span><span class="n">specie_string</span><span class="p">)</span>
+                <span class="n">occupancy</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\((\d+\.\d+)\)&quot;</span><span class="p">,</span> <span class="n">specie</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+                <span class="n">species</span><span class="p">[</span><span class="n">sp</span><span class="p">]</span> <span class="o">=</span> <span class="n">occupancy</span>
+            <span class="n">species</span> <span class="o">=</span> <span class="n">Composition</span><span class="p">(</span><span class="n">species</span><span class="p">)</span>
+            <span class="n">all_species</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">species</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">Structure</span><span class="o">.</span><span class="n">from_spacegroup</span><span class="p">(</span>
+            <span class="n">sg</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">spacegroup_no</span><span class="p">,</span>
+            <span class="n">lattice</span><span class="o">=</span><span class="n">lattice</span><span class="p">,</span>
+            <span class="n">species</span><span class="o">=</span><span class="n">all_species</span><span class="p">,</span>
+            <span class="n">coords</span><span class="o">=</span><span class="n">all_coords</span><span class="p">,</span>
+            <span class="n">tol</span><span class="o">=</span><span class="mf">2e-4</span><span class="p">,</span>  <span class="c1"># BGMN only has 4 decimal places for atomic positions</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LstResult">
+<a class="viewcode-back" href="../../dara.result.html#dara.result.LstResult">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">LstResult</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Refinement result parsed from the .lst file.&quot;&quot;&quot;</span>
+
+    <span class="n">model_config</span> <span class="o">=</span> <span class="n">ConfigDict</span><span class="p">(</span><span class="n">populate_by_name</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s2">&quot;allow&quot;</span><span class="p">)</span>
+
+    <span class="n">raw_lst</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">pattern_name</span><span class="p">:</span> <span class="nb">str</span>
+
+    <span class="n">num_steps</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">rp</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">alias</span><span class="o">=</span><span class="s2">&quot;Rp&quot;</span><span class="p">)</span>
+    <span class="n">rpb</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">alias</span><span class="o">=</span><span class="s2">&quot;Rpb&quot;</span><span class="p">)</span>
+    <span class="n">r</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">alias</span><span class="o">=</span><span class="s2">&quot;R&quot;</span><span class="p">)</span>
+    <span class="n">rwp</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">alias</span><span class="o">=</span><span class="s2">&quot;Rwp&quot;</span><span class="p">)</span>
+    <span class="n">rexp</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">alias</span><span class="o">=</span><span class="s2">&quot;Rexp&quot;</span><span class="p">)</span>
+    <span class="n">d</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">alias</span><span class="o">=</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
+    <span class="n">rho</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">alias</span><span class="o">=</span><span class="s2">&quot;1-rho&quot;</span><span class="p">)</span>
+    <span class="n">phases_results</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">PhaseResult</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="DiaResult">
+<a class="viewcode-back" href="../../dara.result.html#dara.result.DiaResult">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">DiaResult</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Refinement result parsed from the .dia file. Mainly some x-y data for plotting.&quot;&quot;&quot;</span>
+
+    <span class="n">model_config</span> <span class="o">=</span> <span class="n">ConfigDict</span><span class="p">(</span><span class="n">populate_by_name</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">x</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+    <span class="n">y_obs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+    <span class="n">y_calc</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+    <span class="n">y_bkg</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+    <span class="n">structs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]]</span></div>
+
+
+
+<div class="viewcode-block" id="RefinementResult">
+<a class="viewcode-back" href="../../dara.result.html#dara.result.RefinementResult">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RefinementResult</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The result from the refinement, which is parsed from the .lst and .dia files.&quot;&quot;&quot;</span>
+
+    <span class="n">model_config</span> <span class="o">=</span> <span class="n">ConfigDict</span><span class="p">(</span><span class="n">arbitrary_types_allowed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">populate_by_name</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">lst_data</span><span class="p">:</span> <span class="n">LstResult</span>
+    <span class="n">plot_data</span><span class="p">:</span> <span class="n">DiaResult</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="nb">repr</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">peak_data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="nb">repr</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<div class="viewcode-block" id="RefinementResult.transform">
+<a class="viewcode-back" href="../../dara.result.html#dara.result.RefinementResult.transform">[docs]</a>
+    <span class="nd">@field_validator</span><span class="p">(</span><span class="s2">&quot;peak_data&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;before&quot;</span><span class="p">)</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">transform</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create pandas dataframe from peak data dict.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="RefinementResult.visualize">
+<a class="viewcode-back" href="../../dara.result.html#dara.result.RefinementResult.visualize">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">visualize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">diff_offset</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">visualize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">diff_offset</span><span class="o">=</span><span class="n">diff_offset</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="RefinementResult.get_phase_weights">
+<a class="viewcode-back" href="../../dara.result.html#dara.result.RefinementResult.get_phase_weights">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_phase_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the weights for each phase. Default is to normalize and return weight fractions.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            normalize: Whether to normalize and return weight fractions. Defaults to True.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            An ordered dictionary of phase names and their weights.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">weights</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">phase</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lst_data</span><span class="o">.</span><span class="n">phases_results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">weights</span><span class="p">[</span><span class="n">phase</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">gewicht</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">normalize</span><span class="p">:</span>
+            <span class="n">tot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">weights</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+            <span class="n">weights</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="o">/</span> <span class="n">tot</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">weights</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">weights</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="RefinementResult.export_structure">
+<a class="viewcode-back" href="../../dara.result.html#dara.result.RefinementResult.export_structure">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">export_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">phase_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Structure</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Export the refined structure from the phase result.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            phase_name: the name of the phase</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            the refined structure as ``pymatgen.Structure`` object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lst_data</span><span class="o">.</span><span class="n">phases_results</span><span class="p">[</span><span class="n">phase_name</span><span class="p">]</span><span class="o">.</span><span class="n">get_structure</span><span class="p">()</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ParseError">
+<a class="viewcode-back" href="../../dara.result.html#dara.result.ParseError">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ParseError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Error when parsing the result.&quot;&quot;&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="get_result">
+<a class="viewcode-back" href="../../dara.result.html#dara.result.get_result">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_result</span><span class="p">(</span><span class="n">control_file</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RefinementResult</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get the result from the refinement.</span>
+
+<span class="sd">    :param control_file: the path to the control file (.sav)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># get phase names from sav file first</span>
+    <span class="c1"># example</span>
+    <span class="c1"># STRUC[1]=Bi2Fe4O9.str</span>
+    <span class="c1"># STRUC[2]=Bi25FeO39.str</span>
+    <span class="c1"># STRUC[3]=BiFeO3.str</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">sav_text</span> <span class="o">=</span> <span class="n">control_file</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span>
+        <span class="n">phase_names</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;STRUC\[\d+]=(.+?)\.str&quot;</span><span class="p">,</span> <span class="n">sav_text</span><span class="p">)</span>
+
+        <span class="n">lst_path</span> <span class="o">=</span> <span class="n">control_file</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">control_file</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s2">.lst&quot;</span>
+        <span class="n">dia_path</span> <span class="o">=</span> <span class="n">control_file</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">control_file</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s2">.dia&quot;</span>
+        <span class="n">par_path</span> <span class="o">=</span> <span class="n">control_file</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">control_file</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s2">.par&quot;</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;lst_data&quot;</span><span class="p">:</span> <span class="n">parse_lst</span><span class="p">(</span><span class="n">lst_path</span><span class="p">,</span> <span class="n">phase_names</span><span class="o">=</span><span class="n">phase_names</span><span class="p">),</span>
+            <span class="s2">&quot;plot_data&quot;</span><span class="p">:</span> <span class="n">parse_dia</span><span class="p">(</span><span class="n">dia_path</span><span class="p">,</span> <span class="n">phase_names</span><span class="o">=</span><span class="n">phase_names</span><span class="p">),</span>
+            <span class="s2">&quot;peak_data&quot;</span><span class="p">:</span> <span class="n">parse_par</span><span class="p">(</span><span class="n">par_path</span><span class="p">,</span> <span class="n">phase_names</span><span class="o">=</span><span class="n">phase_names</span><span class="p">),</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">RefinementResult</span><span class="p">(</span><span class="o">**</span><span class="n">result</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">ParseError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error in parsing the result from </span><span class="si">{</span><span class="n">control_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span></div>
+
+
+
+<div class="viewcode-block" id="parse_lst">
+<a class="viewcode-back" href="../../dara.result.html#dara.result.parse_lst">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">parse_lst</span><span class="p">(</span><span class="n">lst_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">phase_names</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">LstResult</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get results from the .lst file. This file mainly contains some numbers for the refinement.</span>
+
+<span class="sd">    Example of the .lst file:</span>
+
+<span class="sd">    .. code-block:: none</span>
+
+<span class="sd">        Rietveld refinement to file(s) Mg3MnNi3O8.xy</span>
+<span class="sd">        BGMN version 4.2.23, 8301 measured points, 78 peaks, 20 parameters</span>
+<span class="sd">        Start: Mon Dec 18 11:43:20 2023; End: Mon Dec 18 11:43:21 2023</span>
+<span class="sd">        43 iteration steps</span>
+
+<span class="sd">        Rp=4.14%  Rpb=50.39%  R=13.55%  Rwp=8.98% Rexp=1.47%</span>
+<span class="sd">        Durbin-Watson d=0.06</span>
+<span class="sd">        1-rho=13.6%</span>
+
+<span class="sd">        Global parameters and GOALs</span>
+<span class="sd">        ****************************</span>
+<span class="sd">        QMg3MnNi3O8166sym=0.0700+-0.0046</span>
+<span class="sd">        QNiO=0.9300+-0.0046</span>
+<span class="sd">        EPS2=-0.001657+-0.000033</span>
+
+<span class="sd">        Local parameters and GOALs for phase Mg3MnNi3O8166sym</span>
+<span class="sd">        ******************************************************</span>
+<span class="sd">        SpacegroupNo=166</span>
+<span class="sd">        HermannMauguin=R-32/m</span>
+<span class="sd">        XrayDensity=4.943</span>
+<span class="sd">        Rphase=26.64%</span>
+<span class="sd">        UNIT=NM</span>
+<span class="sd">        A=0.5898+-0.0013</span>
+<span class="sd">        C=1.4449+-0.0062</span>
+<span class="sd">        k1=1.00000</span>
+<span class="sd">        B1=0.00492+-0.00076</span>
+<span class="sd">        GEWICHT=0.0288+-0.0019</span>
+<span class="sd">        GrainSize(1,1,1)=64.7+-10.0</span>
+<span class="sd">        Atomic positions for phase Mg3MnNi3O8166sym</span>
+<span class="sd">        ---------------------------------------------</span>
+<span class="sd">          9     0.5000  0.0000  0.0000     E=(MG(1.0000))</span>
+<span class="sd">          3     0.0000  0.0000  0.0000     E=(MN(1.0000))</span>
+<span class="sd">          9     0.5000  0.0000  0.5000     E=(NI(1.0000))</span>
+<span class="sd">         18     0.0268 -0.0268  0.7429     E=(O(1.0000))</span>
+<span class="sd">          6     0.0000  0.0000  0.2511     E=(O(1.0000))</span>
+
+<span class="sd">        Local parameters and GOALs for phase NiO</span>
+<span class="sd">        ******************************************************</span>
+<span class="sd">        SpacegroupNo=225</span>
+<span class="sd">        HermannMauguin=F4/m-32/m</span>
+<span class="sd">        XrayDensity=6.760</span>
+<span class="sd">        Rphase=11.31%</span>
+<span class="sd">        UNIT=NM</span>
+<span class="sd">        A=0.418697+-0.000027</span>
+<span class="sd">        k1=0</span>
+<span class="sd">        B1=0.00798+-0.00022</span>
+<span class="sd">        GEWICHT=0.3827+-0.0049</span>
+<span class="sd">        GrainSize(1,1,1)=53.2+-1.5</span>
+<span class="sd">        Atomic positions for phase NiO</span>
+<span class="sd">        ---------------------------------------------</span>
+<span class="sd">          4     0.0000  0.0000  0.0000     E=(NI+2(1.0000))</span>
+<span class="sd">          4     0.5000  0.5000  0.5000     E=(O-2(1.0000))</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        lst_path:</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">        phase_results: a dictionary of the results for each phase</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">parse_values</span><span class="p">(</span><span class="n">v_</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">v_</span> <span class="o">=</span> <span class="n">v_</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;%&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">v_</span> <span class="o">==</span> <span class="s2">&quot;ERROR&quot;</span> <span class="ow">or</span> <span class="n">v_</span> <span class="o">==</span> <span class="s2">&quot;UNDEF&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="s2">&quot;+-&quot;</span> <span class="ow">in</span> <span class="n">v_</span><span class="p">:</span>
+                <span class="n">v_</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">v_</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;+-&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">v_</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;+-&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">v_</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">v_</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">v_</span><span class="o">.</span><span class="n">is_integer</span><span class="p">():</span>
+                    <span class="n">v_</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">v_</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">return</span> <span class="n">v_</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">parse_section</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="n">section</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^(\w+)=(.+?)$&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span><span class="p">))</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">parse_values</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">section</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">lst_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot find the .lst file from </span><span class="si">{</span><span class="n">lst_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">lst_path</span><span class="o">.</span><span class="n">open</span><span class="p">()</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">texts</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+    <span class="n">pattern_name</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Rietveld refinement to file\(s\) (.+?)\n&quot;</span><span class="p">,</span> <span class="n">texts</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span>
+        <span class="mi">1</span>
+    <span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;raw_lst&quot;</span><span class="p">:</span> <span class="n">texts</span><span class="p">,</span> <span class="s2">&quot;pattern_name&quot;</span><span class="p">:</span> <span class="n">pattern_name</span><span class="p">}</span>
+
+    <span class="n">num_steps</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\d+) iteration steps&quot;</span><span class="p">,</span> <span class="n">texts</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">result</span><span class="p">[</span><span class="s2">&quot;num_steps&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_steps</span>
+
+    <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Rp&quot;</span><span class="p">,</span> <span class="s2">&quot;Rpb&quot;</span><span class="p">,</span> <span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="s2">&quot;Rwp&quot;</span><span class="p">,</span> <span class="s2">&quot;Rexp&quot;</span><span class="p">]:</span>
+        <span class="n">result</span><span class="p">[</span><span class="n">var</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">rf</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">var</span><span class="si">}</span><span class="s2">=(\d+(\.\d+)?)%&quot;</span><span class="p">,</span> <span class="n">texts</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">result</span><span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="nb">float</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">d</span> <span class="o">:=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Durbin-Watson d=(\d+(\.\d+)?)&quot;</span><span class="p">,</span> <span class="n">texts</span><span class="p">))</span>
+        <span class="k">else</span> <span class="kc">None</span>
+    <span class="p">)</span>
+    <span class="n">result</span><span class="p">[</span><span class="s2">&quot;1-rho&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="nb">float</span><span class="p">(</span><span class="n">rho</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">rho</span> <span class="o">:=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;1-rho=(\d+(\.\d+)?)%&quot;</span><span class="p">,</span> <span class="n">texts</span><span class="p">))</span>
+        <span class="k">else</span> <span class="kc">None</span>
+    <span class="p">)</span>
+
+    <span class="c1"># global goals</span>
+    <span class="n">global_parameters_text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
+        <span class="sa">r</span><span class="s2">&quot;Global parameters and GOALs\n(.*?)\n(?:\n|\Z)&quot;</span><span class="p">,</span> <span class="n">texts</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">global_parameters_text</span><span class="p">:</span>
+        <span class="n">global_parameters_text</span> <span class="o">=</span> <span class="n">global_parameters_text</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">global_parameters</span> <span class="o">=</span> <span class="n">parse_section</span><span class="p">(</span><span class="n">global_parameters_text</span><span class="p">)</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">global_parameters</span><span class="p">)</span>
+
+    <span class="n">phases_results</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span>
+        <span class="sa">r</span><span class="s2">&quot;Local parameters and GOALs for phase .+?\n(.*?)\n(?:\n|\Z)&quot;</span><span class="p">,</span>
+        <span class="n">texts</span><span class="p">,</span>
+        <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">result</span><span class="p">[</span><span class="s2">&quot;phases_results&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">phase_name</span><span class="p">:</span> <span class="n">parse_section</span><span class="p">(</span><span class="n">phase_result</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">phase_name</span><span class="p">,</span> <span class="n">phase_result</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">phase_names</span><span class="p">,</span> <span class="n">phases_results</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c1"># add atomic positions</span>
+    <span class="k">for</span> <span class="n">phase_name</span><span class="p">,</span> <span class="n">phase_result</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">phase_names</span><span class="p">,</span> <span class="n">phases_results</span><span class="p">):</span>
+        <span class="n">atom_section</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
+            <span class="sa">r</span><span class="s2">&quot;Atomic positions for phase .+?\n(-+)\n(.*?)$&quot;</span><span class="p">,</span>
+            <span class="n">phase_result</span><span class="p">,</span>
+            <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">,</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">result</span><span class="p">[</span><span class="s2">&quot;phases_results&quot;</span><span class="p">][</span><span class="n">phase_name</span><span class="p">][</span><span class="s2">&quot;atom_positions_string&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">atom_section</span>
+    <span class="k">return</span> <span class="n">LstResult</span><span class="p">(</span><span class="o">**</span><span class="n">result</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="parse_dia">
+<a class="viewcode-back" href="../../dara.result.html#dara.result.parse_dia">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">parse_dia</span><span class="p">(</span><span class="n">dia_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">phase_names</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">DiaResult</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get the results from the .dia file. This file mainly contains curves for the refinement.</span>
+
+<span class="sd">    // layout of the scanHeap:</span>
+<span class="sd">    // [0] = 2theta</span>
+<span class="sd">    // [1] = iObs</span>
+<span class="sd">    // [2] = iCalc</span>
+<span class="sd">    // [3] = iBkgr</span>
+<span class="sd">    // [4...n] = strucs</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">dia_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot find the .dia file from </span><span class="si">{</span><span class="n">dia_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># read first line to get the keys</span>
+    <span class="n">dia_text</span> <span class="o">=</span> <span class="n">dia_path</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">raw_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">dia_text</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">raw_data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
+        <span class="s2">&quot;y_obs&quot;</span><span class="p">:</span> <span class="n">raw_data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
+        <span class="s2">&quot;y_calc&quot;</span><span class="p">:</span> <span class="n">raw_data</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
+        <span class="s2">&quot;y_bkg&quot;</span><span class="p">:</span> <span class="n">raw_data</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
+        <span class="s2">&quot;structs&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="n">name</span><span class="p">:</span> <span class="n">raw_data</span><span class="p">[:,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">phase_names</span><span class="p">)</span>
+        <span class="p">},</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">DiaResult</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="parse_par">
+<a class="viewcode-back" href="../../dara.result.html#dara.result.parse_par">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">parse_par</span><span class="p">(</span><span class="n">par_file</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">phase_names</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get the parameters from the .par file (hkl).</span>
+
+<span class="sd">    Only work for Cu K alpha!!!</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_make_dataframe</span><span class="p">(</span><span class="n">peak_list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+            <span class="n">peak_list</span><span class="p">,</span>
+            <span class="n">columns</span><span class="o">=</span><span class="p">[</span>
+                <span class="s2">&quot;2theta&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;intensity&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;b1&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;b2&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;h&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;k&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;l&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;phase&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;phase_idx&quot;</span><span class="p">,</span>
+            <span class="p">],</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;2theta&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                <span class="s2">&quot;intensity&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                <span class="s2">&quot;b1&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                <span class="s2">&quot;b2&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                <span class="s2">&quot;h&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                <span class="s2">&quot;k&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                <span class="s2">&quot;l&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                <span class="s2">&quot;phase&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                <span class="s2">&quot;phase_idx&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+
+    <span class="n">content</span> <span class="o">=</span> <span class="n">par_file</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">peak_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">content</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_make_dataframe</span><span class="p">(</span><span class="n">peak_list</span><span class="p">)</span>
+
+    <span class="n">peak_num</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;PEAKZAHL=(\d+)&quot;</span><span class="p">,</span> <span class="n">content</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">peak_num</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_make_dataframe</span><span class="p">(</span><span class="n">peak_list</span><span class="p">)</span>
+
+    <span class="c1"># parse some global parameters</span>
+    <span class="n">eps1</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;EPS1=(\d+(\.\d+)?)&quot;</span><span class="p">,</span> <span class="n">content</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">eps2</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;EPS2=([+-]?\d+(\.\d+)?)&quot;</span><span class="p">,</span> <span class="n">content</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">pol</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;POL=(\d+(\.\d+)?)&quot;</span><span class="p">,</span> <span class="n">content</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">wavelength</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;LAMBDA=(\S+)&quot;</span><span class="p">,</span> <span class="n">content</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">wavelength</span><span class="p">:</span>
+        <span class="n">wavelength</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;SYNCHROTRON=(\S+)&quot;</span><span class="p">,</span> <span class="n">content</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">wavelength</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cannot find the wavelength from the .par file&quot;</span><span class="p">)</span>
+
+    <span class="n">eps1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">eps1</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="k">if</span> <span class="n">eps1</span> <span class="k">else</span> <span class="mf">0.0</span>
+    <span class="n">eps2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">eps2</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="k">if</span> <span class="n">eps2</span> <span class="k">else</span> <span class="mf">0.0</span>
+    <span class="n">pol</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">pol</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="k">if</span> <span class="n">pol</span> <span class="k">else</span> <span class="mf">1.0</span>
+    <span class="n">wavelength</span> <span class="o">=</span> <span class="n">get_wavelength</span><span class="p">(</span><span class="n">wavelength</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">peak_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">peak_num</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+
+    <span class="c1"># get the mapping between the peak&#39;s phase name to the actual phase name</span>
+    <span class="n">all_peak_phase_names</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;PHASE=(\w+)&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">content</span><span class="p">))</span>
+    <span class="n">peak_phase_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="n">all_peak_phase_names</span><span class="p">))</span>
+    <span class="n">phase_names_mapping</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">peak_phase_name</span><span class="p">:</span> <span class="p">(</span><span class="n">phase_name</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">peak_phase_name</span><span class="p">,</span> <span class="n">phase_name</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
+            <span class="nb">zip</span><span class="p">(</span><span class="n">peak_phase_names</span><span class="p">,</span> <span class="n">phase_names</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">peak_num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">content</span><span class="p">):</span>
+            <span class="k">break</span>
+
+        <span class="n">numbers</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\s+&quot;</span><span class="p">,</span> <span class="n">content</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="n">numbers</span><span class="p">:</span>
+            <span class="n">rp</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">intensity</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">d_inv</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+            <span class="n">gsum</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;GSUM=(\d+(\.\d+)?)&quot;</span><span class="p">,</span> <span class="n">content</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">gsum</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">gsum</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="k">if</span> <span class="n">gsum</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mf">1.0</span>
+            <span class="n">intensity</span> <span class="o">=</span> <span class="n">intensity_correction</span><span class="p">(</span>
+                <span class="n">intensity</span><span class="o">=</span><span class="n">intensity</span><span class="p">,</span>
+                <span class="n">d_inv</span><span class="o">=</span><span class="n">d_inv</span><span class="p">,</span>
+                <span class="n">gsum</span><span class="o">=</span><span class="n">gsum</span><span class="p">,</span>
+                <span class="n">wavelength</span><span class="o">=</span><span class="n">wavelength</span><span class="p">,</span>
+                <span class="n">pol</span><span class="o">=</span><span class="n">pol</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">rp</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">b1</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">b2</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">elif</span> <span class="n">rp</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">b1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+                <span class="n">b2</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">elif</span> <span class="n">rp</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="n">b1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+                <span class="n">b2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">b1</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">b2</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="n">h</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+            <span class="n">l</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># noqa: E741</span>
+
+            <span class="n">phase</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;PHASE=(\w+)&quot;</span><span class="p">,</span> <span class="n">content</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">phase</span><span class="p">,</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">phase_names_mapping</span><span class="p">[</span><span class="n">phase</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">intensity</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">peak_list</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">d_inv</span><span class="p">,</span> <span class="n">intensity</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">phase</span><span class="p">,</span> <span class="n">idx</span><span class="p">])</span>
+
+    <span class="c1"># from d_inv to two theta</span>
+    <span class="n">two_theta</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">arcsin</span><span class="p">(</span><span class="n">wavelength</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">peak_list</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="o">*</span> <span class="mi">180</span>
+        <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+        <span class="o">*</span> <span class="mi">2</span>
+    <span class="p">)</span>
+
+    <span class="c1"># apply eps1 and eps2</span>
+    <span class="n">two_theta</span> <span class="o">+=</span> <span class="n">angular_correction</span><span class="p">(</span><span class="n">two_theta</span><span class="p">,</span> <span class="n">eps1</span><span class="p">,</span> <span class="n">eps2</span><span class="p">)</span>
+    <span class="n">peak_list</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">[</span><span class="n">two_theta</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+</span> <span class="n">peak_list</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">peak_list</span><span class="p">))</span>  <span class="c1"># noqa: RUF005</span>
+    <span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">_make_dataframe</span><span class="p">(</span><span class="n">peak_list</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yuxing Fei, Matthew J. McDermott
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, Ceder Group.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

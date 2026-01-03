@@ -454,7 +454,7 @@
 <span id="dara-search-peak-matcher-module"></span><h1>dara.search.peak_matcher module<a class="headerlink" href="#module-dara.search.peak_matcher" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="dara.search.peak_matcher.PeakMatcher">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PeakMatcher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">peak_calc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peak_obs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intensity_resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle_resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle_tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intensity_tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_intensity_tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.search.peak_matcher.PeakMatcher" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PeakMatcher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">peak_calc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peak_obs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intensity_resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle_resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle_tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intensity_tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_intensity_tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/search/peak_matcher.html#PeakMatcher"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.search.peak_matcher.PeakMatcher" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Peak matcher class to match the calculated peaks with the observed peaks.</p>
 <dl class="field-list simple">
@@ -479,7 +479,7 @@ default to 10</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="dara.search.peak_matcher.PeakMatcher.get_isolated_peaks">
-<span class="sig-name descname"><span class="pre">get_isolated_peaks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">peak_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_angle_difference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_intensity_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.03</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.search.peak_matcher.PeakMatcher.get_isolated_peaks" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_isolated_peaks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">peak_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_angle_difference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_intensity_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.03</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/search/peak_matcher.html#PeakMatcher.get_isolated_peaks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.search.peak_matcher.PeakMatcher.get_isolated_peaks" title="Link to this definition">#</a></dt>
 <dd><p>Get the isolated missing peaks in the <cite>observed peaks</cite>.</p>
 <p>The isolated missing/extra peaks are the missing/extra peaks that are not close to any other
 peaks in matched and wrong intensity peaks.</p>
@@ -502,7 +502,7 @@ peaks in matched and wrong intensity peaks.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="dara.search.peak_matcher.PeakMatcher.jaccard_index">
-<span class="sig-name descname"><span class="pre">jaccard_index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dara.search.peak_matcher.PeakMatcher.jaccard_index" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">jaccard_index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/search/peak_matcher.html#PeakMatcher.jaccard_index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.search.peak_matcher.PeakMatcher.jaccard_index" title="Link to this definition">#</a></dt>
 <dd><p>Calculate the Jaccard index of the matching result.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -528,7 +528,7 @@ peaks in matched and wrong intensity peaks.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="dara.search.peak_matcher.PeakMatcher.score">
-<span class="sig-name descname"><span class="pre">score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matched_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wrong_intensity_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">missing_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.search.peak_matcher.PeakMatcher.score" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matched_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wrong_intensity_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">missing_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/search/peak_matcher.html#PeakMatcher.score"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.search.peak_matcher.PeakMatcher.score" title="Link to this definition">#</a></dt>
 <dd><p>Calculate the score of the matching result.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -551,7 +551,7 @@ peaks in matched and wrong intensity peaks.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="dara.search.peak_matcher.PeakMatcher.visualize">
-<span class="sig-name descname"><span class="pre">visualize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dara.search.peak_matcher.PeakMatcher.visualize" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">visualize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/search/peak_matcher.html#PeakMatcher.visualize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.search.peak_matcher.PeakMatcher.visualize" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
@@ -565,7 +565,7 @@ peaks in matched and wrong intensity peaks.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="dara.search.peak_matcher.absolute_log_error">
-<span class="sig-name descname"><span class="pre">absolute_log_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.search.peak_matcher.absolute_log_error" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">absolute_log_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/search/peak_matcher.html#absolute_log_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.search.peak_matcher.absolute_log_error" title="Link to this definition">#</a></dt>
 <dd><p>Calculate the absolute error of two arrays in log space.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -585,7 +585,7 @@ peaks in matched and wrong intensity peaks.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="dara.search.peak_matcher.distance_matrix">
-<span class="sig-name descname"><span class="pre">distance_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">peaks1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peaks2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.search.peak_matcher.distance_matrix" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">distance_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">peaks1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peaks2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/search/peak_matcher.html#distance_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.search.peak_matcher.distance_matrix" title="Link to this definition">#</a></dt>
 <dd><p>Return the distance matrix between two sets of peaks.</p>
 <p>The distance is defined as the maximum of the distance in position and the distance in intensity.
 The position distance is the absolute difference in position.
@@ -608,7 +608,7 @@ The intensity distance is the absolute difference in log intensity.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="dara.search.peak_matcher.find_best_match">
-<span class="sig-name descname"><span class="pre">find_best_match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">peak_calc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peak_obs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle_tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intensity_tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_intensity_tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.search.peak_matcher.find_best_match" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">find_best_match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">peak_calc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peak_obs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle_tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intensity_tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_intensity_tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/search/peak_matcher.html#find_best_match"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.search.peak_matcher.find_best_match" title="Link to this definition">#</a></dt>
 <dd><p>Find the best match between two sets of peaks.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -645,7 +645,7 @@ extra peaks in peak_calc)</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="dara.search.peak_matcher.merge_peaks">
-<span class="sig-name descname"><span class="pre">merge_peaks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">peaks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.search.peak_matcher.merge_peaks" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">merge_peaks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">peaks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/search/peak_matcher.html#merge_peaks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.search.peak_matcher.merge_peaks" title="Link to this definition">#</a></dt>
 <dd><p>Merge peaks that are too close to each other (smaller than resolution).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -750,7 +750,7 @@ By Yuxing Fei, Matthew J. McDermott
 
   <p class="copyright">
     
-      © Copyright 2025, Ceder Group.
+      © Copyright 2026, Ceder Group.
       <br/>
     
   </p>

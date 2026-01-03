@@ -454,12 +454,12 @@
 <p>Functions related to opening/reading CIF files.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="dara.cif.Cif">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Cif</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orig_string</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.cif.Cif" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Cif</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orig_string</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/cif.html#Cif"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.cif.Cif" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MSONable</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">CifFile</span></code></p>
 <p>Thin wrapper around pymatgen’s CifFile to enable serialization.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="dara.cif.Cif.from_file">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.cif.Cif.from_file" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/cif.html#Cif.from_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.cif.Cif.from_file" title="Link to this definition">#</a></dt>
 <dd><p>Read Cif from a path.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -476,7 +476,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="dara.cif.Cif.from_str">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.cif.Cif.from_str" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/cif.html#Cif.from_str"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.cif.Cif.from_str" title="Link to this definition">#</a></dt>
 <dd><p>Read CifFile from a string. Method closely adapted from
 pymatgen.io.cif.CifFile.from_str.</p>
 <dl class="field-list simple">
@@ -494,7 +494,7 @@ pymatgen.io.cif.CifFile.from_str.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="dara.cif.Cif.from_structure">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.cif.Cif.from_structure" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/cif.html#Cif.from_structure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.cif.Cif.from_structure" title="Link to this definition">#</a></dt>
 <dd><p>Convert to Cif from pymatgen Structure.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -505,7 +505,7 @@ pymatgen.io.cif.CifFile.from_str.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="dara.cif.Cif.get_disordered_cifs">
-<span class="sig-name descname"><span class="pre">get_disordered_cifs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_num_structs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vol_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.cif.Cif.get_disordered_cifs" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_disordered_cifs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_num_structs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vol_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/cif.html#Cif.get_disordered_cifs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.cif.Cif.get_disordered_cifs" title="Link to this definition">#</a></dt>
 <dd><p>Call get_disordered_structures, but return Cif objects instead.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -523,7 +523,7 @@ pymatgen.io.cif.CifFile.from_str.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="dara.cif.Cif.get_disordered_structures">
-<span class="sig-name descname"><span class="pre">get_disordered_structures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_num_structs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vol_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.cif.Cif.get_disordered_structures" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_disordered_structures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_num_structs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vol_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/cif.html#Cif.get_disordered_structures"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.cif.Cif.get_disordered_structures" title="Link to this definition">#</a></dt>
 <dd><p>Convert to disordered structures, ranked from predicted lowest to highest
 energy. This method is useful when starting from ordered computed structures.</p>
 <dl class="field-list simple">
@@ -549,7 +549,7 @@ not be read by pymatgen, the filename will be returned.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="dara.cif.Cif.to_file">
-<span class="sig-name descname"><span class="pre">to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.cif.Cif.to_file" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/cif.html#Cif.to_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.cif.Cif.to_file" title="Link to this definition">#</a></dt>
 <dd><p>Save to .cif file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -564,7 +564,7 @@ attribute ([formula]_[spacegroup]).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="dara.cif.Cif.to_scaled_structure">
-<span class="sig-name descname"><span class="pre">to_scaled_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vol_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.03</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.cif.Cif.to_scaled_structure" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_scaled_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vol_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.03</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/cif.html#Cif.to_scaled_structure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.cif.Cif.to_scaled_structure" title="Link to this definition">#</a></dt>
 <dd><p>Scales the structure isotropically by volume. Useful for expanding DFT-computed structures.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -581,7 +581,7 @@ attribute ([formula]_[spacegroup]).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="dara.cif.Cif.to_structure">
-<span class="sig-name descname"><span class="pre">to_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.cif.Cif.to_structure" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/cif.html#Cif.to_structure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.cif.Cif.to_structure" title="Link to this definition">#</a></dt>
 <dd><p>Convert to pymatgen Structure.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -594,14 +594,14 @@ attribute ([formula]_[spacegroup]).</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="dara.cif.CifBlock">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CifBlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loops</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.cif.CifBlock" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CifBlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loops</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/cif.html#CifBlock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.cif.CifBlock" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MSONable</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">CifBlock</span></code></p>
 <p>Thin wrapper around CifBlock to enable serialization by subclassing MSONable.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="dara.cif.get_formula_with_disorder">
-<span class="sig-name descname"><span class="pre">get_formula_with_disorder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dara.cif.get_formula_with_disorder" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_formula_with_disorder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/cif.html#get_formula_with_disorder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.cif.get_formula_with_disorder" title="Link to this definition">#</a></dt>
 <dd><p>Get the formula of a structure with disorder included.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -698,7 +698,7 @@ By Yuxing Fei, Matthew J. McDermott
 
   <p class="copyright">
     
-      © Copyright 2025, Ceder Group.
+      © Copyright 2026, Ceder Group.
       <br/>
     
   </p>
