@@ -42,7 +42,7 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../../_static/documentation_options.js?v=877af9a5"></script>
+    <script src="../../../_static/documentation_options.js?v=3c867bb8"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -56,7 +56,7 @@
     <link rel="search" title="Search" href="../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.1.4" />
+  <meta name="docsearch:version" content="1.1.5" />
   </head>
   
   
@@ -395,7 +395,7 @@
         <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">()</span> <span class="k">as</span> <span class="n">temp</span><span class="p">:</span>
             <span class="n">temp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">pattern_file</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
             <span class="n">temp</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.xy&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.txt&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.xye&quot;</span><span class="p">):</span>  <span class="c1"># noqa: PIE810</span>
+            <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s2">&quot;.xy&quot;</span><span class="p">,</span> <span class="s2">&quot;.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;.xye&quot;</span><span class="p">)):</span>
                 <span class="n">pattern</span> <span class="o">=</span> <span class="n">XYFile</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
             <span class="k">elif</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.xrdml&quot;</span><span class="p">):</span>
                 <span class="n">pattern</span> <span class="o">=</span> <span class="n">XRDMLFile</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
@@ -416,7 +416,13 @@
                 <span class="k">for</span> <span class="n">phase</span> <span class="ow">in</span> <span class="n">additional_phases</span><span class="p">:</span>
                     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">temp_dir</span> <span class="o">/</span> <span class="n">phase</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
                         <span class="n">shutil</span><span class="o">.</span><span class="n">copyfileobj</span><span class="p">(</span><span class="n">phase</span><span class="o">.</span><span class="n">file</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
-                        <span class="n">additional_cifs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Cif</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">temp_dir</span> <span class="o">/</span> <span class="n">phase</span><span class="o">.</span><span class="n">filename</span><span class="p">))</span>
+                    <span class="n">cif_file</span> <span class="o">=</span> <span class="n">Cif</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">temp_dir</span> <span class="o">/</span> <span class="n">phase</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">cif_file</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span>
+                            <span class="n">status_code</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
+                            <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;Invalid additional CIF file provided&quot;</span><span class="p">,</span>
+                        <span class="p">)</span>
+                    <span class="n">additional_cifs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Cif</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">temp_dir</span> <span class="o">/</span> <span class="n">phase</span><span class="o">.</span><span class="n">filename</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">additional_cifs</span> <span class="o">=</span> <span class="kc">None</span>
 
