@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "dara-xrd"
 description = "Data-driven automated Rietveld analysis using BGMN."
 readme = "README.md"
-version = "1.1.5"
+version = "1.1.6"
 keywords = [
     "rietveld",
     "search-match",
@@ -46,7 +46,7 @@ dependencies = [
     "scikit-learn>=1.3.2",
     "pydantic>=2.11.7",
     "pydantic-settings>=2.10.1",
-    "ray>=2.48.0",
+    "ray>=2.44.0",
     "pybaselines>=1.1.0",
     "spglib>=2.5.0",
     "jobflow>=0.2.0",
@@ -75,7 +75,7 @@ strict = [
     "scikit-learn==1.3.2",
     "pydantic==2.11.7",
     "pydantic-settings==2.10.1",
-    "ray==2.48.0",
+    "ray==2.44.0",
     "numpy==1.26.4",
     "pybaselines==1.1.0",
     "spglib==2.5.0",
