@@ -1,9 +1,7 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite the associated preprint."
+message: "If you use this software, please cite the associated article."
 title: "Dara: Automated multiple-hypothesis phase identification and refinement from powder X‑ray diffraction"
 version: "1.1.4"
-# Release date corresponds to the arXiv submission date
-# see lines 41–44 on the arXiv page showing the submission date【885770301353164†L38-L45】
 date-released: "2025-10-22"
 authors:
   - family-names: Fei
@@ -16,10 +14,9 @@ authors:
     given-names: Shilong
   - family-names: Ceder
     given-names: Gerbrand
-# DOI corresponding to the arXiv preprint【885770301353164†L76-L80】
 identifiers:
   - type: doi
-    value: "10.48550/arXiv.2510.19667"
+    value: "10.1021/acs.chemmater.5c02820"
 repository-code: "https://github.com/idocx/dara"
 abstract: |
   Powder X‑ray diffraction (XRD) is a foundational technique for characterizing
@@ -46,6 +43,11 @@ preferred-citation:
     - family-names: Ceder
       given-names: Gerbrand
   title: "Dara: Automated multiple-hypothesis phase identification and refinement from powder X‑ray diffraction"
-  date: "2025-10-22"
-  doi: "10.48550/arXiv.2510.19667"
-  url: "https://arxiv.org/abs/2510.19667"
+  journal: "Chemistry of Materials"
+  volume: 38
+  issue: 3
+  start: 1364
+  end: 1376
+  year: 2026
+  doi: "10.1021/acs.chemmater.5c02820"
+  url: "https://doi.org/10.1021/acs.chemmater.5c02820"

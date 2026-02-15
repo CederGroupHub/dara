@@ -30,10 +30,16 @@ For more details about usage, please refer to the [documentation](https://idocx.
 If you use DARA in your research, please consider citing the following paper:
 
 ```
-@article{fei2025dara,
-  title={Dara: Automated multiple-hypothesis phase identification and refinement from powder X-ray diffraction},
-  author={Fei, Yuxing and McDermott, Matthew J and Rom, Christopher L and Wang, Shilong and Ceder, Gerbrand},
-  journal={arXiv preprint arXiv:2510.19667},
-  year={2025}
+@article{doi:10.1021/acs.chemmater.5c02820,
+  author = {Fei, Yuxing and McDermott, Matthew J. and Rom, Christopher L. and Wang, Shilong and Ceder, Gerbrand},
+  title = {Dara: Automated Multiple-Hypothesis Phase Identification and Refinement from Powder X-ray Diffraction},
+  journal = {Chemistry of Materials},
+  volume = {38},
+  number = {3},
+  pages = {1364-1376},
+  year = {2026},
+  doi = {10.1021/acs.chemmater.5c02820},
+  url = {https://doi.org/10.1021/acs.chemmater.5c02820},
+  eprint = {https://doi.org/10.1021/acs.chemmater.5c02820}
 }
 ```
