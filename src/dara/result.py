@@ -186,7 +186,7 @@ class RefinementResult(BaseModel):
 
         Returns
         -------
-            An ordered dictionary of phase names and their weights.
+            A dictionary of phase names and their weights.
         """
         weights = {}
         for phase, data in self.lst_data.phases_results.items():
@@ -195,7 +195,7 @@ class RefinementResult(BaseModel):
         if normalize:
             tot = np.sum(list(weights.values()))
             weights = {k: v / tot for k, v in weights.items()}
-        return dict(sorted(weights.items(), key=lambda item: item[1], reverse=True))
+        return weights
 
     def export_structure(self, phase_name: str) -> Structure:
         """
