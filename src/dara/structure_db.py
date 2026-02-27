@@ -295,7 +295,7 @@ class CODDatabase(StructureDatabase):
     @staticmethod
     def _download_cod(cod_id: str) -> Cif:
         """Download a COD file from its ID."""
-        COD_URL = "https://www.crystallography.net/cod/{cod_id}.cif"
+        COD_URL = "https://qiserver.ugr.es/cod/{cod_id}.cif"
         # Get the content of the URL
         try:
             url = COD_URL.format(cod_id=cod_id)
