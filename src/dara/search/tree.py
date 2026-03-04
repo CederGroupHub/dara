@@ -63,7 +63,7 @@ def remote_do_refinement_no_saving(
             phase_params=phase_params,
             refinement_params=refinement_params,
         )
-    except (RuntimeError, TimeoutExpired, CIF2StrError) as e:
+    except (RuntimeError, TimeoutExpired, CIF2StrError, ValueError) as e:
         logger.debug(f"Refinement failed for {cif_paths}, the reason is {e}")
         return None
     if result.lst_data.rpb == 100:
