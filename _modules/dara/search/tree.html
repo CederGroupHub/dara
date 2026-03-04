@@ -411,7 +411,7 @@
             <span class="n">phase_params</span><span class="o">=</span><span class="n">phase_params</span><span class="p">,</span>
             <span class="n">refinement_params</span><span class="o">=</span><span class="n">refinement_params</span><span class="p">,</span>
         <span class="p">)</span>
-    <span class="k">except</span> <span class="p">(</span><span class="ne">RuntimeError</span><span class="p">,</span> <span class="n">TimeoutExpired</span><span class="p">,</span> <span class="n">CIF2StrError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">RuntimeError</span><span class="p">,</span> <span class="n">TimeoutExpired</span><span class="p">,</span> <span class="n">CIF2StrError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Refinement failed for </span><span class="si">{</span><span class="n">cif_paths</span><span class="si">}</span><span class="s2">, the reason is </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">None</span>
     <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">lst_data</span><span class="o">.</span><span class="n">rpb</span> <span class="o">==</span> <span class="mi">100</span><span class="p">:</span>
