@@ -42,7 +42,7 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../../_static/documentation_options.js?v=e2360a19"></script>
+    <script src="../../../_static/documentation_options.js?v=f5428a7f"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -56,7 +56,7 @@
     <link rel="search" title="Search" href="../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.1.11" />
+  <meta name="docsearch:version" content="1.1.12" />
   </head>
   
   
@@ -1036,8 +1036,10 @@
         <span class="n">all_possible_nodes</span> <span class="o">=</span> <span class="n">all_possible_nodes</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
         <span class="n">foms</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="mi">0</span><span class="p">,)</span> <span class="k">for</span> <span class="n">_pinned_phases</span> <span class="ow">in</span> <span class="n">all_possible_nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">current_phases</span>
+        <span class="p">]</span> <span class="o">+</span> <span class="p">[</span>
             <span class="nb">tuple</span><span class="p">([</span><span class="n">node</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">fom</span> <span class="ow">or</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">possible_nodes</span><span class="p">])</span>
-            <span class="k">for</span> <span class="n">possible_nodes</span> <span class="ow">in</span> <span class="n">all_possible_nodes</span>
+            <span class="k">for</span> <span class="n">possible_nodes</span> <span class="ow">in</span> <span class="n">all_possible_nodes</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
         <span class="p">]</span>
         <span class="n">phases</span> <span class="o">=</span> <span class="p">[</span>
             <span class="p">(</span><span class="n">pinned_phase</span><span class="p">,)</span>
@@ -1048,11 +1050,13 @@
             <span class="nb">tuple</span><span class="p">([</span><span class="n">node</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">current_phases</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">possible_nodes</span><span class="p">])</span>
             <span class="k">for</span> <span class="n">possible_nodes</span> <span class="ow">in</span> <span class="n">all_possible_nodes</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
         <span class="p">]</span>
-        <span class="n">number_of_pinned_phases</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_possible_nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">current_phases</span><span class="p">)</span>
         <span class="n">lattice_strains</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="mi">0</span><span class="p">,)</span> <span class="k">for</span> <span class="n">_pinned_phases</span> <span class="ow">in</span> <span class="n">all_possible_nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">current_phases</span>
+        <span class="p">]</span> <span class="o">+</span> <span class="p">[</span>
             <span class="nb">tuple</span><span class="p">([</span><span class="n">node</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">lattice_strain</span> <span class="ow">or</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">possible_nodes</span><span class="p">])</span>
-            <span class="k">for</span> <span class="n">possible_nodes</span> <span class="ow">in</span> <span class="n">all_possible_nodes</span>
+            <span class="k">for</span> <span class="n">possible_nodes</span> <span class="ow">in</span> <span class="n">all_possible_nodes</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
         <span class="p">]</span>
+        <span class="n">number_of_pinned_phases</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_possible_nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">current_phases</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">phases</span><span class="p">,</span> <span class="n">foms</span><span class="p">,</span> <span class="n">lattice_strains</span><span class="p">,</span> <span class="n">number_of_pinned_phases</span></div>
 
