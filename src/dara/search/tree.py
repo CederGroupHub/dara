@@ -773,7 +773,7 @@ class BaseSearchTree(Tree):
         peak_matcher_score_threshold, _ = find_optimal_score_threshold(
             list(scores.values())
         )
-        peak_matcher_score_threshold = max(peak_matcher_score_threshold, 0)
+        # peak_matcher_score_threshold = max(peak_matcher_score_threshold, 0)
 
         filtered_scores = {
             phase: score
