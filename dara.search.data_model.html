@@ -424,6 +424,15 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.search.data_model.PeakMatchingStrategy"><code class="docutils literal notranslate"><span class="pre">PeakMatchingStrategy</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.search.data_model.PeakMatchingStrategy.extra_coeff"><code class="docutils literal notranslate"><span class="pre">PeakMatchingStrategy.extra_coeff</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.search.data_model.PeakMatchingStrategy.matched_coeff"><code class="docutils literal notranslate"><span class="pre">PeakMatchingStrategy.matched_coeff</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.search.data_model.PeakMatchingStrategy.missing_coeff"><code class="docutils literal notranslate"><span class="pre">PeakMatchingStrategy.missing_coeff</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.search.data_model.PeakMatchingStrategy.wrong_intensity_coeff"><code class="docutils literal notranslate"><span class="pre">PeakMatchingStrategy.wrong_intensity_coeff</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.search.data_model.PeakMatchingStrategy.as_kwargs"><code class="docutils literal notranslate"><span class="pre">PeakMatchingStrategy.as_kwargs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.search.data_model.PeakMatchingStrategy.from_tuple"><code class="docutils literal notranslate"><span class="pre">PeakMatchingStrategy.from_tuple()</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.search.data_model.SearchNodeData"><code class="docutils literal notranslate"><span class="pre">SearchNodeData</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.search.data_model.SearchNodeData.current_phases"><code class="docutils literal notranslate"><span class="pre">SearchNodeData.current_phases</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.search.data_model.SearchNodeData.current_result"><code class="docutils literal notranslate"><span class="pre">SearchNodeData.current_result</span></code></a></li>
@@ -464,6 +473,107 @@
   <section id="module-dara.search.data_model">
 <span id="dara-search-data-model-module"></span><h1>dara.search.data_model module<a class="headerlink" href="#module-dara.search.data_model" title="Link to this heading">#</a></h1>
 <p>Search node data model.</p>
+<dl class="py class pydantic_model">
+<dt class="sig sig-object py" id="dara.search.data_model.PeakMatchingStrategy">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PeakMatchingStrategy</span></span><a class="reference internal" href="_modules/dara/search/data_model.html#PeakMatchingStrategy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.search.data_model.PeakMatchingStrategy" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></p>
+<p>Coefficients for peak matching score calculation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>matched_coeff</strong> – the coefficient of the matched peaks</p></li>
+<li><p><strong>wrong_intensity_coeff</strong> – the coefficient of the peaks with wrong intensities</p></li>
+<li><p><strong>missing_coeff</strong> – the coefficient of the missing peaks</p></li>
+<li><p><strong>extra_coeff</strong> – the coefficient of the extra peaks</p></li>
+</ul>
+</dd>
+</dl>
+<p><details  class="autodoc_pydantic_collapsable_json">
+<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PeakMatchingStrategy&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Coefficients for peak matching score calculation.\n\nArgs:\n    matched_coeff: the coefficient of the matched peaks\n    wrong_intensity_coeff: the coefficient of the peaks with wrong intensities\n    missing_coeff: the coefficient of the missing peaks\n    extra_coeff: the coefficient of the extra peaks&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;matched_coeff&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Matched Coeff&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;number&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;wrong_intensity_coeff&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Wrong Intensity Coeff&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;number&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;missing_coeff&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Missing Coeff&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;number&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;extra_coeff&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Extra Coeff&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;number&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;matched_coeff&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;wrong_intensity_coeff&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;missing_coeff&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;extra_coeff&quot;</span>
+<span class="w">   </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</details></p><dl class="field-list simple">
+<dt class="field-odd">Fields<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#dara.search.data_model.PeakMatchingStrategy.extra_coeff" title="dara.search.data_model.PeakMatchingStrategy.extra_coeff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extra_coeff</span> <span class="pre">(float)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#dara.search.data_model.PeakMatchingStrategy.matched_coeff" title="dara.search.data_model.PeakMatchingStrategy.matched_coeff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matched_coeff</span> <span class="pre">(float)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#dara.search.data_model.PeakMatchingStrategy.missing_coeff" title="dara.search.data_model.PeakMatchingStrategy.missing_coeff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">missing_coeff</span> <span class="pre">(float)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#dara.search.data_model.PeakMatchingStrategy.wrong_intensity_coeff" title="dara.search.data_model.PeakMatchingStrategy.wrong_intensity_coeff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wrong_intensity_coeff</span> <span class="pre">(float)</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="dara.search.data_model.PeakMatchingStrategy.extra_coeff">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">extra_coeff</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#dara.search.data_model.PeakMatchingStrategy.extra_coeff" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="dara.search.data_model.PeakMatchingStrategy.matched_coeff">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">matched_coeff</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#dara.search.data_model.PeakMatchingStrategy.matched_coeff" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="dara.search.data_model.PeakMatchingStrategy.missing_coeff">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">missing_coeff</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#dara.search.data_model.PeakMatchingStrategy.missing_coeff" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="dara.search.data_model.PeakMatchingStrategy.wrong_intensity_coeff">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wrong_intensity_coeff</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#dara.search.data_model.PeakMatchingStrategy.wrong_intensity_coeff" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dara.search.data_model.PeakMatchingStrategy.as_kwargs">
+<span class="sig-name descname"><span class="pre">as_kwargs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/search/data_model.html#PeakMatchingStrategy.as_kwargs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.search.data_model.PeakMatchingStrategy.as_kwargs" title="Link to this definition">#</a></dt>
+<dd><p>Return the coefficients as keyword arguments for PeakMatcher.score().</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dara.search.data_model.PeakMatchingStrategy.from_tuple">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_tuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coeffs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/search/data_model.html#PeakMatchingStrategy.from_tuple"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.search.data_model.PeakMatchingStrategy.from_tuple" title="Link to this definition">#</a></dt>
+<dd><p>Create from a tuple of (matched_coeff, wrong_intensity_coeff, missing_coeff, extra_coeff).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#dara.search.data_model.PeakMatchingStrategy" title="dara.search.data_model.PeakMatchingStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">PeakMatchingStrategy</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="py class pydantic_model">
 <dt class="sig sig-object py" id="dara.search.data_model.SearchNodeData">
 <em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SearchNodeData</span></span><a class="reference internal" href="_modules/dara/search/data_model.html#SearchNodeData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.search.data_model.SearchNodeData" title="Link to this definition">#</a></dt>
@@ -928,6 +1038,15 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.search.data_model.PeakMatchingStrategy"><code class="docutils literal notranslate"><span class="pre">PeakMatchingStrategy</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.search.data_model.PeakMatchingStrategy.extra_coeff"><code class="docutils literal notranslate"><span class="pre">PeakMatchingStrategy.extra_coeff</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.search.data_model.PeakMatchingStrategy.matched_coeff"><code class="docutils literal notranslate"><span class="pre">PeakMatchingStrategy.matched_coeff</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.search.data_model.PeakMatchingStrategy.missing_coeff"><code class="docutils literal notranslate"><span class="pre">PeakMatchingStrategy.missing_coeff</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.search.data_model.PeakMatchingStrategy.wrong_intensity_coeff"><code class="docutils literal notranslate"><span class="pre">PeakMatchingStrategy.wrong_intensity_coeff</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.search.data_model.PeakMatchingStrategy.as_kwargs"><code class="docutils literal notranslate"><span class="pre">PeakMatchingStrategy.as_kwargs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.search.data_model.PeakMatchingStrategy.from_tuple"><code class="docutils literal notranslate"><span class="pre">PeakMatchingStrategy.from_tuple()</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.search.data_model.SearchNodeData"><code class="docutils literal notranslate"><span class="pre">SearchNodeData</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.search.data_model.SearchNodeData.current_phases"><code class="docutils literal notranslate"><span class="pre">SearchNodeData.current_phases</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.search.data_model.SearchNodeData.current_result"><code class="docutils literal notranslate"><span class="pre">SearchNodeData.current_result</span></code></a></li>

@@ -357,6 +357,7 @@
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">ray</span>
 
+<span class="kn">from</span><span class="w"> </span><span class="nn">dara.search.data_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">PeakMatchingStrategy</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">dara.search.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseSearchTree</span><span class="p">,</span> <span class="n">SearchTree</span>
 
 <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
@@ -411,7 +412,14 @@
     <span class="n">refinement_params</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">return_search_tree</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">record_peak_matcher_scores</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-    <span class="n">rpb_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">rpb_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">peak_matching_strategy</span><span class="p">:</span> <span class="n">PeakMatchingStrategy</span>
+    <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="n">PeakMatchingStrategy</span><span class="p">(</span>
+        <span class="n">matched_coeff</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="n">wrong_intensity_coeff</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="n">missing_coeff</span><span class="o">=-</span><span class="mf">0.0</span><span class="p">,</span>
+        <span class="n">extra_coeff</span><span class="o">=-</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="p">),</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">SearchResult</span><span class="p">]</span> <span class="o">|</span> <span class="n">SearchTree</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Search for the best phases to use for refinement.</span>
@@ -434,7 +442,14 @@
 <span class="sd">        record_peak_matcher_scores: whether to record the peak matcher scores. This is mainly used for</span>
 <span class="sd">            debugging purposes.</span>
 <span class="sd">        rpb_threshold: the RPB threshold</span>
+<span class="sd">        peak_matching_strategy: the coefficients for peak matching score calculation. Can be a</span>
+<span class="sd">            PeakMatchingStrategy model or a tuple of four floats</span>
+<span class="sd">            (matched_coeff, wrong_intensity_coeff, missing_coeff, extra_coeff).</span>
+<span class="sd">            If None, the default coefficients will be used.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">peak_matching_strategy</span><span class="p">,</span> <span class="n">PeakMatchingStrategy</span><span class="p">):</span>
+        <span class="n">peak_matching_strategy</span> <span class="o">=</span> <span class="n">PeakMatchingStrategy</span><span class="o">.</span><span class="n">from_tuple</span><span class="p">(</span><span class="n">peak_matching_strategy</span><span class="p">)</span>
+
     <span class="k">if</span> <span class="n">phase_params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">phase_params</span> <span class="o">=</span> <span class="p">{}</span>
 
@@ -461,6 +476,7 @@
         <span class="n">max_phases</span><span class="o">=</span><span class="n">max_phases</span><span class="p">,</span>
         <span class="n">rpb_threshold</span><span class="o">=</span><span class="n">rpb_threshold</span><span class="p">,</span>
         <span class="n">record_peak_matcher_scores</span><span class="o">=</span><span class="n">record_peak_matcher_scores</span><span class="p">,</span>
+        <span class="n">peak_matching_strategy</span><span class="o">=</span><span class="n">peak_matching_strategy</span><span class="p">,</span>
     <span class="p">)</span>
 
     <span class="n">max_worker</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">cluster_resources</span><span class="p">()[</span><span class="s2">&quot;CPU&quot;</span><span class="p">]</span>
