@@ -361,7 +361,7 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">dara.cif2str</span><span class="w"> </span><span class="kn">import</span> <span class="n">cif2str</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">dara.generate_control_file</span><span class="w"> </span><span class="kn">import</span> <span class="n">generate_control_file</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">dara.result</span><span class="w"> </span><span class="kn">import</span> <span class="n">RefinementResult</span><span class="p">,</span> <span class="n">get_result</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dara.xrd</span><span class="w"> </span><span class="kn">import</span> <span class="n">rasx2xy</span><span class="p">,</span> <span class="n">raw2xy</span><span class="p">,</span> <span class="n">xrdml2xy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dara.xrd</span><span class="w"> </span><span class="kn">import</span> <span class="n">convert_pattern_to_xy</span>
 
 
 <div class="viewcode-block" id="RefinementPhase">
@@ -448,12 +448,8 @@
     <span class="k">if</span> <span class="n">refinement_params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">refinement_params</span> <span class="o">=</span> <span class="p">{}</span>
 
-    <span class="k">if</span> <span class="n">pattern_path</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s2">&quot;.xrdml&quot;</span><span class="p">:</span>
-        <span class="n">pattern_path</span> <span class="o">=</span> <span class="n">xrdml2xy</span><span class="p">(</span><span class="n">pattern_path</span><span class="p">,</span> <span class="n">working_dir</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">pattern_path</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s2">&quot;.raw&quot;</span><span class="p">:</span>
-        <span class="n">pattern_path</span> <span class="o">=</span> <span class="n">raw2xy</span><span class="p">(</span><span class="n">pattern_path</span><span class="p">,</span> <span class="n">working_dir</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">pattern_path</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s2">&quot;.rasx&quot;</span><span class="p">:</span>
-        <span class="n">pattern_path</span> <span class="o">=</span> <span class="n">rasx2xy</span><span class="p">(</span><span class="n">pattern_path</span><span class="p">,</span> <span class="n">working_dir</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pattern_path</span><span class="o">.</span><span class="n">suffix</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;.xy&quot;</span><span class="p">,):</span>
+        <span class="n">pattern_path</span> <span class="o">=</span> <span class="n">convert_pattern_to_xy</span><span class="p">(</span><span class="n">pattern_path</span><span class="p">,</span> <span class="n">working_dir</span><span class="p">)</span>
 
     <span class="n">str_paths</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">phase_path</span> <span class="ow">in</span> <span class="n">phases</span><span class="p">:</span>

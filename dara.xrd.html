@@ -454,9 +454,11 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.XYFile.from_file"><code class="docutils literal notranslate"><span class="pre">XYFile.from_file()</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.convert_pattern_to_xy"><code class="docutils literal notranslate"><span class="pre">convert_pattern_to_xy()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.get_xrdml_data"><code class="docutils literal notranslate"><span class="pre">get_xrdml_data()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.hex2float"><code class="docutils literal notranslate"><span class="pre">hex2float()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.hex2int"><code class="docutils literal notranslate"><span class="pre">hex2int()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.load_pattern"><code class="docutils literal notranslate"><span class="pre">load_pattern()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.load_rasx"><code class="docutils literal notranslate"><span class="pre">load_rasx()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.load_raw"><code class="docutils literal notranslate"><span class="pre">load_raw()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.load_xrdml"><code class="docutils literal notranslate"><span class="pre">load_xrdml()</span></code></a></li>
@@ -678,6 +680,28 @@ the Aeris instrument.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="dara.xrd.convert_pattern_to_xy">
+<span class="sig-name descname"><span class="pre">convert_pattern_to_xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/xrd.html#convert_pattern_to_xy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.xrd.convert_pattern_to_xy" title="Link to this definition">#</a></dt>
+<dd><p>Convert any supported XRD pattern file to .xy format.</p>
+<p>If the file is already in .xy format, it is copied to the target folder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fn</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></span>) – the path to the pattern file.</p></li>
+<li><p><strong>target_folder</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – the folder to save the .xy file in. Defaults to the
+same folder as the input file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the path to the generated .xy file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="dara.xrd.get_xrdml_data">
 <span class="sig-name descname"><span class="pre">get_xrdml_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xrd_dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/xrd.html#get_xrdml_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.xrd.get_xrdml_data" title="Link to this definition">#</a></dt>
 <dd><p>Get angles and intensities from an XRDML dictionary.</p>
@@ -704,6 +728,27 @@ the Aeris instrument.</p>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dara.xrd.load_pattern">
+<span class="sig-name descname"><span class="pre">load_pattern</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dara/xrd.html#load_pattern"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dara.xrd.load_pattern" title="Link to this definition">#</a></dt>
+<dd><p>Load an XRD pattern from any supported file format.</p>
+<p>Supported formats: .xy, .xye, .txt, .scn, .xrdml, .raw, .rasx.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></span>) – the path to the pattern file.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#dara.xrd.XRDData" title="dara.xrd.XRDData"><code class="xref py py-class docutils literal notranslate"><span class="pre">XRDData</span></code></a></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>an XRDData instance (XYFile, XRDMLFile, RawFile, or RASXFile).</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – if the file extension is not supported.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -853,9 +898,11 @@ The content is kept for potential round-trip saving, though it’s rarely used.<
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.XYFile.from_file"><code class="docutils literal notranslate"><span class="pre">XYFile.from_file()</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.convert_pattern_to_xy"><code class="docutils literal notranslate"><span class="pre">convert_pattern_to_xy()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.get_xrdml_data"><code class="docutils literal notranslate"><span class="pre">get_xrdml_data()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.hex2float"><code class="docutils literal notranslate"><span class="pre">hex2float()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.hex2int"><code class="docutils literal notranslate"><span class="pre">hex2int()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.load_pattern"><code class="docutils literal notranslate"><span class="pre">load_pattern()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.load_rasx"><code class="docutils literal notranslate"><span class="pre">load_rasx()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.load_raw"><code class="docutils literal notranslate"><span class="pre">load_raw()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dara.xrd.load_xrdml"><code class="docutils literal notranslate"><span class="pre">load_xrdml()</span></code></a></li>

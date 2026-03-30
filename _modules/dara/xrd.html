@@ -803,6 +803,82 @@
     <span class="n">RASXFile</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span><span class="o">.</span><span class="n">to_xy_file</span><span class="p">(</span><span class="n">target_path</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">target_path</span></div>
 
+
+
+<span class="c1"># Extension-to-class mapping for all supported XRD formats.</span>
+<span class="c1"># Add new formats here to make them available everywhere automatically.</span>
+<span class="n">_FORMAT_LOADERS</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">type</span><span class="p">[</span><span class="n">XRDData</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;.xy&quot;</span><span class="p">:</span> <span class="n">XYFile</span><span class="p">,</span>
+    <span class="s2">&quot;.xye&quot;</span><span class="p">:</span> <span class="n">XYFile</span><span class="p">,</span>
+    <span class="s2">&quot;.txt&quot;</span><span class="p">:</span> <span class="n">XYFile</span><span class="p">,</span>
+    <span class="s2">&quot;.scn&quot;</span><span class="p">:</span> <span class="n">XYFile</span><span class="p">,</span>
+    <span class="s2">&quot;.xrdml&quot;</span><span class="p">:</span> <span class="n">XRDMLFile</span><span class="p">,</span>
+    <span class="s2">&quot;.raw&quot;</span><span class="p">:</span> <span class="n">RawFile</span><span class="p">,</span>
+    <span class="s2">&quot;.rasx&quot;</span><span class="p">:</span> <span class="n">RASXFile</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="load_pattern">
+<a class="viewcode-back" href="../../dara.xrd.html#dara.xrd.load_pattern">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_pattern</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">XRDData</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Load an XRD pattern from any supported file format.</span>
+
+<span class="sd">    Supported formats: .xy, .xye, .txt, .scn, .xrdml, .raw, .rasx.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path: the path to the pattern file.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        an XRDData instance (XYFile, XRDMLFile, RawFile, or RASXFile).</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: if the file extension is not supported.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">ext</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">suffix</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">loader</span> <span class="o">=</span> <span class="n">_FORMAT_LOADERS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ext</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">loader</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Unsupported pattern file format: &#39;</span><span class="si">{</span><span class="n">ext</span><span class="si">}</span><span class="s2">&#39;. &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Supported formats: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">_FORMAT_LOADERS</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">loader</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="convert_pattern_to_xy">
+<a class="viewcode-back" href="../../dara.xrd.html#dara.xrd.convert_pattern_to_xy">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">convert_pattern_to_xy</span><span class="p">(</span>
+    <span class="n">fn</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span> <span class="n">target_folder</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert any supported XRD pattern file to .xy format.</span>
+
+<span class="sd">    If the file is already in .xy format, it is copied to the target folder.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        fn: the path to the pattern file.</span>
+<span class="sd">        target_folder: the folder to save the .xy file in. Defaults to the</span>
+<span class="sd">            same folder as the input file.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        the path to the generated .xy file.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+
+    <span class="n">fn</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">target_folder</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">target_folder</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">parent</span>
+    <span class="n">target_path</span> <span class="o">=</span> <span class="n">target_folder</span> <span class="o">/</span> <span class="n">fn</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s2">&quot;.xy&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+
+    <span class="n">ext</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">suffix</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">ext</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;.xy&quot;</span><span class="p">,</span> <span class="s2">&quot;.xye&quot;</span><span class="p">,</span> <span class="s2">&quot;.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;.scn&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">fn</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span> <span class="o">!=</span> <span class="n">target_path</span><span class="o">.</span><span class="n">resolve</span><span class="p">():</span>
+            <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">target_path</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">load_pattern</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span><span class="o">.</span><span class="n">to_xy_file</span><span class="p">(</span><span class="n">target_path</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">target_path</span></div>
+
 </pre></div>
 
                 </article>

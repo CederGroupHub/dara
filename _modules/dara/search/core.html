@@ -412,13 +412,13 @@
     <span class="n">refinement_params</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">return_search_tree</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">record_peak_matcher_scores</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-    <span class="n">rpb_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">rpb_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">peak_matching_strategy</span><span class="p">:</span> <span class="n">PeakMatchingStrategy</span>
     <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="n">PeakMatchingStrategy</span><span class="p">(</span>
         <span class="n">matched_coeff</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
         <span class="n">wrong_intensity_coeff</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-        <span class="n">missing_coeff</span><span class="o">=-</span><span class="mf">0.0</span><span class="p">,</span>
-        <span class="n">extra_coeff</span><span class="o">=-</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="n">missing_coeff</span><span class="o">=-</span><span class="mf">0.05</span><span class="p">,</span>
+        <span class="n">extra_coeff</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">,</span>
     <span class="p">),</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">SearchResult</span><span class="p">]</span> <span class="o">|</span> <span class="n">SearchTree</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -441,7 +441,7 @@
 <span class="sd">        return_search_tree: whether to return the search tree. This is mainly used for debugging purposes.</span>
 <span class="sd">        record_peak_matcher_scores: whether to record the peak matcher scores. This is mainly used for</span>
 <span class="sd">            debugging purposes.</span>
-<span class="sd">        rpb_threshold: the RPB threshold</span>
+<span class="sd">        rpb_threshold: the RPB threshold. If None, it will be automatically determined based on the pattern&#39;s SNR.</span>
 <span class="sd">        peak_matching_strategy: the coefficients for peak matching score calculation. Can be a</span>
 <span class="sd">            PeakMatchingStrategy model or a tuple of four floats</span>
 <span class="sd">            (matched_coeff, wrong_intensity_coeff, missing_coeff, extra_coeff).</span>
