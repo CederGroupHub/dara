@@ -399,6 +399,32 @@
         <span class="p">)</span></div>
 
 
+<div class="viewcode-block" id="PeakMatchingStrategy.default">
+<a class="viewcode-back" href="../../../dara.search.data_model.html#dara.search.data_model.PeakMatchingStrategy.default">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">default</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PeakMatchingStrategy</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the default strategy used in search_phases.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">matched_coeff</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+            <span class="n">wrong_intensity_coeff</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+            <span class="n">missing_coeff</span><span class="o">=-</span><span class="mf">0.05</span><span class="p">,</span>
+            <span class="n">extra_coeff</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PeakMatchingStrategy.default_tree">
+<a class="viewcode-back" href="../../../dara.search.data_model.html#dara.search.data_model.PeakMatchingStrategy.default_tree">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">default_tree</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PeakMatchingStrategy</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the default strategy used in the search tree.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">matched_coeff</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+            <span class="n">wrong_intensity_coeff</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+            <span class="n">missing_coeff</span><span class="o">=-</span><span class="mf">0.01</span><span class="p">,</span>
+            <span class="n">extra_coeff</span><span class="o">=-</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
 <div class="viewcode-block" id="PeakMatchingStrategy.as_kwargs">
 <a class="viewcode-back" href="../../../dara.search.data_model.html#dara.search.data_model.PeakMatchingStrategy.as_kwargs">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">as_kwargs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>

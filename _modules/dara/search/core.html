@@ -375,6 +375,7 @@
     <span class="s2">&quot;rp&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
 <span class="p">}</span>
 <span class="n">DEFAULT_REFINEMENT_PARAMS</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;n_threads&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;eps1&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;eps2&quot;</span><span class="p">:</span> <span class="s2">&quot;0_-0.05^0.05&quot;</span><span class="p">}</span>
+<span class="n">DEFAULT_PEAK_MATCHING_STRATEGY</span> <span class="o">=</span> <span class="n">PeakMatchingStrategy</span><span class="o">.</span><span class="n">default</span><span class="p">()</span>
 
 
 <span class="nd">@ray</span><span class="o">.</span><span class="n">remote</span>
@@ -414,12 +415,7 @@
     <span class="n">record_peak_matcher_scores</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">rpb_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">peak_matching_strategy</span><span class="p">:</span> <span class="n">PeakMatchingStrategy</span>
-    <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="n">PeakMatchingStrategy</span><span class="p">(</span>
-        <span class="n">matched_coeff</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-        <span class="n">wrong_intensity_coeff</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-        <span class="n">missing_coeff</span><span class="o">=-</span><span class="mf">0.05</span><span class="p">,</span>
-        <span class="n">extra_coeff</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">,</span>
-    <span class="p">),</span>
+    <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="n">DEFAULT_PEAK_MATCHING_STRATEGY</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">SearchResult</span><span class="p">]</span> <span class="o">|</span> <span class="n">SearchTree</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Search for the best phases to use for refinement.</span>

@@ -368,8 +368,6 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">dara.refine</span><span class="w"> </span><span class="kn">import</span> <span class="n">RefinementPhase</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">dara.search.data_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">PeakMatchingStrategy</span><span class="p">,</span> <span class="n">SearchNodeData</span><span class="p">,</span> <span class="n">SearchResult</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">dara.search.peak_matcher</span><span class="w"> </span><span class="kn">import</span> <span class="n">PeakMatcher</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dara.xrd</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_pattern</span>
-
 <span class="kn">from</span><span class="w"> </span><span class="nn">dara.utils</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">estimate_rpb_threshold</span><span class="p">,</span>
     <span class="n">find_optimal_intensity_threshold</span><span class="p">,</span>
@@ -381,6 +379,7 @@
     <span class="n">parse_refinement_param</span><span class="p">,</span>
     <span class="n">rpb</span><span class="p">,</span>
 <span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dara.xrd</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_pattern</span>
 
 <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">dara.result</span><span class="w"> </span><span class="kn">import</span> <span class="n">RefinementResult</span>
@@ -756,16 +755,14 @@
         <span class="n">rpb_threshold</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
         <span class="n">pinned_phases</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">RefinementPhase</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">record_peak_matcher_scores</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="n">peak_matching_strategy</span><span class="p">:</span> <span class="n">PeakMatchingStrategy</span> <span class="o">=</span> <span class="n">PeakMatchingStrategy</span><span class="p">(</span>
-            <span class="n">matched_coeff</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-            <span class="n">wrong_intensity_coeff</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-            <span class="n">missing_coeff</span><span class="o">=-</span><span class="mf">0.01</span><span class="p">,</span>
-            <span class="n">extra_coeff</span><span class="o">=-</span><span class="mf">1.0</span><span class="p">,</span>
-        <span class="p">),</span>
+        <span class="n">peak_matching_strategy</span><span class="p">:</span> <span class="n">PeakMatchingStrategy</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="o">*</span><span class="n">args</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">peak_matching_strategy</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">peak_matching_strategy</span> <span class="o">=</span> <span class="n">PeakMatchingStrategy</span><span class="o">.</span><span class="n">default_tree</span><span class="p">()</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">pattern_path</span> <span class="o">=</span> <span class="n">pattern_path</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rpb_threshold</span> <span class="o">=</span> <span class="n">rpb_threshold</span>
@@ -1360,16 +1357,14 @@
         <span class="n">max_phases</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
         <span class="n">rpb_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">record_peak_matcher_scores</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="n">peak_matching_strategy</span><span class="p">:</span> <span class="n">PeakMatchingStrategy</span> <span class="o">=</span> <span class="n">PeakMatchingStrategy</span><span class="p">(</span>
-            <span class="n">matched_coeff</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-            <span class="n">wrong_intensity_coeff</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-            <span class="n">missing_coeff</span><span class="o">=-</span><span class="mf">0.01</span><span class="p">,</span>
-            <span class="n">extra_coeff</span><span class="o">=-</span><span class="mf">1.0</span><span class="p">,</span>
-        <span class="p">),</span>
+        <span class="n">peak_matching_strategy</span><span class="p">:</span> <span class="n">PeakMatchingStrategy</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="o">*</span><span class="n">args</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="n">pattern_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">pattern_path</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">peak_matching_strategy</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">peak_matching_strategy</span> <span class="o">=</span> <span class="n">PeakMatchingStrategy</span><span class="o">.</span><span class="n">default_tree</span><span class="p">()</span>
 
         <span class="c1"># Auto-determine rpb_threshold from pattern SNR if not provided</span>
         <span class="k">if</span> <span class="n">rpb_threshold</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
