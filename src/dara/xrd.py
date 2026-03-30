@@ -383,3 +383,73 @@ def rasx2xy(fn: str | Path, target_folder: Path = None) -> Path:
 
     RASXFile.from_file(fn).to_xy_file(target_path)
     return target_path
+
+
+# Extension-to-class mapping for all supported XRD formats.
+# Add new formats here to make them available everywhere automatically.
+_FORMAT_LOADERS: dict[str, type[XRDData]] = {
+    ".xy": XYFile,
+    ".xye": XYFile,
+    ".txt": XYFile,
+    ".scn": XYFile,
+    ".xrdml": XRDMLFile,
+    ".raw": RawFile,
+    ".rasx": RASXFile,
+}
+
+
+def load_pattern(path: str | Path) -> XRDData:
+    """Load an XRD pattern from any supported file format.
+
+    Supported formats: .xy, .xye, .txt, .scn, .xrdml, .raw, .rasx.
+
+    Args:
+        path: the path to the pattern file.
+
+    Returns:
+        an XRDData instance (XYFile, XRDMLFile, RawFile, or RASXFile).
+
+    Raises:
+        ValueError: if the file extension is not supported.
+    """
+    path = Path(path)
+    ext = path.suffix.lower()
+    loader = _FORMAT_LOADERS.get(ext)
+    if loader is None:
+        raise ValueError(
+            f"Unsupported pattern file format: '{ext}'. "
+            f"Supported formats: {', '.join(sorted(_FORMAT_LOADERS.keys()))}"
+        )
+    return loader.from_file(path)
+
+
+def convert_pattern_to_xy(
+    fn: str | Path, target_folder: Path | None = None
+) -> Path:
+    """Convert any supported XRD pattern file to .xy format.
+
+    If the file is already in .xy format, it is copied to the target folder.
+
+    Args:
+        fn: the path to the pattern file.
+        target_folder: the folder to save the .xy file in. Defaults to the
+            same folder as the input file.
+
+    Returns:
+        the path to the generated .xy file.
+    """
+    import shutil
+
+    fn = Path(fn)
+    if target_folder is None:
+        target_folder = fn.parent
+    target_path = target_folder / fn.with_suffix(".xy").name
+
+    ext = fn.suffix.lower()
+    if ext in (".xy", ".xye", ".txt", ".scn"):
+        if fn.resolve() != target_path.resolve():
+            shutil.copy2(fn, target_path)
+    else:
+        load_pattern(fn).to_xy_file(target_path)
+
+    return target_path

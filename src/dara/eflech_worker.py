@@ -16,11 +16,10 @@ from sklearn.cluster import AgglomerativeClustering
 from dara.bgmn.download_bgmn import download_bgmn
 from dara.generate_control_file import (
     copy_instrument_files,
-    copy_xy_pattern,
     trim_pattern,
 )
 from dara.utils import get_logger, get_wavelength, intensity_correction
-from dara.xrd import rasx2xy, raw2xy, xrdml2xy
+from dara.xrd import convert_pattern_to_xy
 
 logger = get_logger(__name__)
 
@@ -68,21 +67,7 @@ class EflechWorker:
             else:
                 if isinstance(pattern, str):
                     pattern = Path(pattern)
-                if (
-                    pattern.suffix == ".xy"
-                    or pattern.suffix == ".txt"
-                    or pattern.suffix == ".xye"
-                    or pattern.suffix == ".scn"
-                ):
-                    pattern_path_temp = copy_xy_pattern(pattern, temp_dir)
-                elif pattern.suffix == ".xrdml":
-                    pattern_path_temp = xrdml2xy(pattern, temp_dir)
-                elif pattern.suffix == ".raw":
-                    pattern_path_temp = raw2xy(pattern, temp_dir)
-                elif pattern.suffix == ".rasx":
-                    pattern_path_temp = rasx2xy(pattern, temp_dir)
-                else:
-                    raise ValueError(f"Unknown pattern file type: {pattern.suffix}")
+                pattern_path_temp = convert_pattern_to_xy(pattern, temp_dir)
 
             xy_content = np.loadtxt(pattern_path_temp, dtype=float)
             xy_content = trim_pattern(xy_content)

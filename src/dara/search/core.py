@@ -59,13 +59,13 @@ def search_phases(
     refinement_params: dict[str, ...] | None = None,
     return_search_tree: bool = False,
     record_peak_matcher_scores: bool = False,
-    rpb_threshold: float = 1,
+    rpb_threshold: float | None = None,
     peak_matching_strategy: PeakMatchingStrategy
     | tuple[float, float, float, float] = PeakMatchingStrategy(
         matched_coeff=1.0,
         wrong_intensity_coeff=1.0,
-        missing_coeff=-0.0,
-        extra_coeff=-1.0,
+        missing_coeff=-0.05,
+        extra_coeff=-0.5,
     ),
 ) -> list[SearchResult] | SearchTree:
     """
@@ -88,7 +88,7 @@ def search_phases(
         return_search_tree: whether to return the search tree. This is mainly used for debugging purposes.
         record_peak_matcher_scores: whether to record the peak matcher scores. This is mainly used for
             debugging purposes.
-        rpb_threshold: the RPB threshold
+        rpb_threshold: the RPB threshold. If None, it will be automatically determined based on the pattern's SNR.
         peak_matching_strategy: the coefficients for peak matching score calculation. Can be a
             PeakMatchingStrategy model or a tuple of four floats
             (matched_coeff, wrong_intensity_coeff, missing_coeff, extra_coeff).

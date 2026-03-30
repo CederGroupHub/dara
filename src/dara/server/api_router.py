@@ -24,7 +24,7 @@ from dara.utils import (
     get_compositional_clusters,
     get_head_of_compositional_cluster,
 )
-from dara.xrd import RASXFile, RawFile, XRDMLFile, XYFile
+from dara.xrd import load_pattern
 
 router = APIRouter(prefix="/api")
 
@@ -45,16 +45,14 @@ async def submit(
         with tempfile.NamedTemporaryFile() as temp:
             temp.write(pattern_file.file.read())
             temp.seek(0)
-            if name.endswith((".xy", ".txt", ".xye")):
-                pattern = XYFile.from_file(temp.name)
-            elif name.endswith(".xrdml"):
-                pattern = XRDMLFile.from_file(temp.name)
-            elif name.endswith(".raw"):
-                pattern = RawFile.from_file(temp.name)
-            elif name.endswith(".rasx"):
-                pattern = RASXFile.from_file(temp.name)
-            else:
-                print(pattern_file.filename)
+            try:
+                # Use the original filename's extension to detect format,
+                # since the temp file has no meaningful extension.
+                temp_path = Path(temp.name).parent / name
+                import shutil
+                shutil.copy2(temp.name, temp_path)
+                pattern = load_pattern(temp_path)
+            except ValueError:
                 raise HTTPException(status_code=400, detail="Invalid file format")
 
         precursor_formulas = literal_eval(precursor_formulas)

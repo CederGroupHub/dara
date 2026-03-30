@@ -20,7 +20,10 @@ from dara.peak_detection import detect_peaks
 from dara.refine import RefinementPhase
 from dara.search.data_model import PeakMatchingStrategy, SearchNodeData, SearchResult
 from dara.search.peak_matcher import PeakMatcher
+from dara.xrd import load_pattern
+
 from dara.utils import (
+    estimate_rpb_threshold,
     find_optimal_intensity_threshold,
     find_optimal_score_threshold,
     get_logger,
@@ -957,7 +960,7 @@ class SearchTree(BaseSearchTree):
         enable_angular_cut: bool = True,
         maximum_grouping_distance: float = 0.1,
         max_phases: float = 5,
-        rpb_threshold: float = 1,
+        rpb_threshold: float | None = None,
         record_peak_matcher_scores: bool = False,
         peak_matching_strategy: PeakMatchingStrategy = PeakMatchingStrategy(
             matched_coeff=1.0,
@@ -969,6 +972,15 @@ class SearchTree(BaseSearchTree):
         **kwargs,
     ):
         pattern_path = Path(pattern_path)
+
+        # Auto-determine rpb_threshold from pattern SNR if not provided
+        if rpb_threshold is None:
+            xrd = load_pattern(pattern_path)
+            rpb_threshold = estimate_rpb_threshold(xrd.intensities)
+            logger.info(
+                f"rpb_threshold automatically set to {rpb_threshold:.2f} "
+                f"based on pattern SNR."
+            )
 
         # remove duplicates
         self.cif_paths = list(

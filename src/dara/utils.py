@@ -573,6 +573,78 @@ def get_wavelength(wavelength_or_target_metal: float | str) -> float:
     return wavelength_or_target_metal
 
 
+def estimate_snr(intensities: np.ndarray, window: int = 80) -> float:
+    """Estimate the signal-to-noise ratio (SNR) of an XRD pattern in dB.
+
+    Uses a rolling-ball approach (minimum filter + smoothing) to estimate the
+    background, then computes SNR = 20 * log10(max_signal / noise_std).
+
+    Args:
+        intensities: the raw intensity array of the XRD pattern.
+        window: the window size for the minimum/uniform filters. Defaults to 80.
+
+    Returns:
+        the estimated SNR in dB.
+    """
+    from scipy.ndimage import minimum_filter1d, uniform_filter1d
+
+    bg = minimum_filter1d(intensities, size=window)
+    bg = uniform_filter1d(bg, size=window)
+    residual = intensities - bg
+
+    threshold = np.percentile(residual, 50)
+    noise_mask = residual < threshold
+    noise_std = np.std(residual[noise_mask]) if np.any(noise_mask) else np.std(residual)
+
+    max_signal = np.max(residual)
+    if noise_std == 0:
+        noise_std = 1e-10
+
+    return float(20 * np.log10(max_signal / noise_std))
+
+
+def estimate_rpb_threshold(
+    intensities: np.ndarray,
+    center: float = 2.0,
+    low: float = 1.0,
+    high: float = 3.0,
+    snr_low: float = 41.6,
+    snr_high: float = 52.7,
+) -> float:
+    """Estimate an appropriate rpb_threshold based on the SNR of an XRD pattern.
+
+    The mapping is linear between ``snr_low`` and ``snr_high`` (the IQR from
+    empirical analysis of ~4500 patterns, 41.6–52.7 dB).  Higher SNR patterns
+    get a stricter (lower) threshold, while noisier patterns get a more lenient
+    (higher) threshold.  Values outside the IQR are clamped to ``[low, high]``.
+
+    Default output range is [1, 3] centered at 2.
+
+    Args:
+        intensities: the raw intensity array of the XRD pattern.
+        center: the expected (center) rpb_threshold value. Defaults to 2.0.
+        low: the minimum rpb_threshold (returned for high-SNR patterns). Defaults to 1.0.
+        high: the maximum rpb_threshold (returned for low-SNR patterns). Defaults to 3.0.
+        snr_low: the SNR (dB) that maps to ``high`` rpb_threshold (Q1). Defaults to 41.6.
+        snr_high: the SNR (dB) that maps to ``low`` rpb_threshold (Q3). Defaults to 52.7.
+
+    Returns:
+        the estimated rpb_threshold, clamped to [low, high].
+    """
+    snr_db = estimate_snr(intensities)
+
+    # Linear interpolation: high SNR → low threshold, low SNR → high threshold
+    snr_center = (snr_low + snr_high) / 2.0
+    half_range = (snr_high - snr_low) / 2.0
+    threshold_half_range = (high - low) / 2.0
+
+    if half_range == 0:
+        return center
+
+    rpb_thresh = center - (snr_db - snr_center) / half_range * threshold_half_range
+    return float(np.clip(rpb_thresh, low, high))
+
+
 def parse_refinement_param(
     refinement_param: str | float,
 ) -> tuple[str | float, float | None, float | None]:
