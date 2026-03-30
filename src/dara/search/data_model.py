@@ -46,6 +46,26 @@ class PeakMatchingStrategy(BaseModel, frozen=True):
             extra_coeff=coeffs[3],
         )
 
+    @classmethod
+    def default(cls) -> PeakMatchingStrategy:
+        """Return the default strategy used in search_phases."""
+        return cls(
+            matched_coeff=1.0,
+            wrong_intensity_coeff=1.0,
+            missing_coeff=-0.05,
+            extra_coeff=-0.5,
+        )
+
+    @classmethod
+    def default_tree(cls) -> PeakMatchingStrategy:
+        """Return the default strategy used in the search tree."""
+        return cls(
+            matched_coeff=1.0,
+            wrong_intensity_coeff=1.0,
+            missing_coeff=-0.01,
+            extra_coeff=-1.0,
+        )
+
     def as_kwargs(self) -> dict[str, float]:
         """Return the coefficients as keyword arguments for PeakMatcher.score()."""
         return {

@@ -27,6 +27,7 @@ DEFAULT_PHASE_PARAMS = {
     "rp": 4,
 }
 DEFAULT_REFINEMENT_PARAMS = {"n_threads": 8, "eps1": 0, "eps2": "0_-0.05^0.05"}
+DEFAULT_PEAK_MATCHING_STRATEGY = PeakMatchingStrategy.default()
 
 
 @ray.remote
@@ -61,12 +62,7 @@ def search_phases(
     record_peak_matcher_scores: bool = False,
     rpb_threshold: float | None = None,
     peak_matching_strategy: PeakMatchingStrategy
-    | tuple[float, float, float, float] = PeakMatchingStrategy(
-        matched_coeff=1.0,
-        wrong_intensity_coeff=1.0,
-        missing_coeff=-0.05,
-        extra_coeff=-0.5,
-    ),
+    | tuple[float, float, float, float] = DEFAULT_PEAK_MATCHING_STRATEGY,
 ) -> list[SearchResult] | SearchTree:
     """
     Search for the best phases to use for refinement.

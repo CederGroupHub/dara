@@ -614,7 +614,7 @@ def estimate_rpb_threshold(
     """Estimate an appropriate rpb_threshold based on the SNR of an XRD pattern.
 
     The mapping is linear between ``snr_low`` and ``snr_high`` (the IQR from
-    empirical analysis of ~4500 patterns, 41.6–52.7 dB).  Higher SNR patterns
+    empirical analysis of ~4500 patterns, 41.6-52.7 dB).  Higher SNR patterns
     get a stricter (lower) threshold, while noisier patterns get a more lenient
     (higher) threshold.  Values outside the IQR are clamped to ``[low, high]``.
 

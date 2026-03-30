@@ -20,8 +20,6 @@ from dara.peak_detection import detect_peaks
 from dara.refine import RefinementPhase
 from dara.search.data_model import PeakMatchingStrategy, SearchNodeData, SearchResult
 from dara.search.peak_matcher import PeakMatcher
-from dara.xrd import load_pattern
-
 from dara.utils import (
     estimate_rpb_threshold,
     find_optimal_intensity_threshold,
@@ -33,6 +31,7 @@ from dara.utils import (
     parse_refinement_param,
     rpb,
 )
+from dara.xrd import load_pattern
 
 if TYPE_CHECKING:
     from dara.result import RefinementResult
@@ -388,16 +387,14 @@ class BaseSearchTree(Tree):
         rpb_threshold: float,
         pinned_phases: list[RefinementPhase] | None = None,
         record_peak_matcher_scores: bool = False,
-        peak_matching_strategy: PeakMatchingStrategy = PeakMatchingStrategy(
-            matched_coeff=1.0,
-            wrong_intensity_coeff=1.0,
-            missing_coeff=-0.01,
-            extra_coeff=-1.0,
-        ),
+        peak_matching_strategy: PeakMatchingStrategy | None = None,
         *args,
         **kwargs,
     ):
         super().__init__(*args, **kwargs)
+
+        if peak_matching_strategy is None:
+            peak_matching_strategy = PeakMatchingStrategy.default_tree()
 
         self.pattern_path = pattern_path
         self.rpb_threshold = rpb_threshold
@@ -962,16 +959,14 @@ class SearchTree(BaseSearchTree):
         max_phases: float = 5,
         rpb_threshold: float | None = None,
         record_peak_matcher_scores: bool = False,
-        peak_matching_strategy: PeakMatchingStrategy = PeakMatchingStrategy(
-            matched_coeff=1.0,
-            wrong_intensity_coeff=1.0,
-            missing_coeff=-0.01,
-            extra_coeff=-1.0,
-        ),
+        peak_matching_strategy: PeakMatchingStrategy | None = None,
         *args,
         **kwargs,
     ):
         pattern_path = Path(pattern_path)
+
+        if peak_matching_strategy is None:
+            peak_matching_strategy = PeakMatchingStrategy.default_tree()
 
         # Auto-determine rpb_threshold from pattern SNR if not provided
         if rpb_threshold is None:

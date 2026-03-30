@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import os
-import shutil
 import tempfile
 from ast import literal_eval
 from pathlib import Path
