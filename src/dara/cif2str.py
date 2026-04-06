@@ -268,7 +268,7 @@ def cif2str(
     b1: str = "0_0^0.01",
     lebail: bool = False,
     custom_lines: list[str] | None = None,
-    element_params_map: dict[str, str] | None = None,
+    element_params_map: dict[str, dict] | None = None,
 ) -> Path:
     """
     Convert CIF to Str format.
@@ -288,14 +288,13 @@ def cif2str(
         custom_lines: optional list of custom BGMN string parameters to inject. This allows for defining complex
             mathematical equations, global parameters, or fractional occupancies
             (e.g., ["PARAM=Bglobal=0.05_0.01^0.20 //", "PARAM=BO=0.1_0.02^0.3 //"]).
-        element_params_map: optional dictionary mapping element symbols to custom variable strings. You can inject
-            multiple BGMN keywords into the Wyckoff line simultaneously. You can use the wildcard key "*" to apply
-            a global parameter to all elements that are not specifically matched in the dictionary
-            (e.g., {"*": "Bglobal", "O": "BO Occ=OccO"}).
+        element_params_map: optional dictionary mapping element symbols to dictionaries of parameters to add
+            or overwrite. You can use the wildcard key "*" to apply parameters to all elements that are not
+            specifically matched in the dictionary (e.g., {"*": {"TDS": "Bglobal"}, "O": {"TDS": "BO", "Occ": "OccO"}}).
 
     An example of the output .str file when using
     custom_lines=["PARAM=Bglobal=0.05_0.01^0.20 //", "PARAM=BO=0.1_0.02^0.3 //"]
-    and element_params_map={"*": "Bglobal", "O": "BO"}:
+    and element_params_map={"*": {"TDS": "Bglobal"}, "O": {"TDS": "BO", "Occ": "OccO"}}:
 
     PHASE=BariumzirconiumtinIVoxide105053 // ICSD_43137
     Reference=ICSD_43137 //
@@ -308,7 +307,7 @@ def cif2str(
     PARAM=BO=0.1_0.02^0.3 //
     E=BA+2 Wyckoff=b x=0.500000 y=0.500000 z=0.500000 TDS=Bglobal
     E=(ZR+4(0.5000),SN+4(0.5000)) Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=Bglobal
-    E=O-2 Wyckoff=d x=0.500000 y=0.000000 z=0.000000 TDS=BO
+    E=O-2 Wyckoff=d x=0.500000 y=0.000000 z=0.000000 TDS=BO Occ=OccO
 
     """
     str_path = (
@@ -386,26 +385,26 @@ def cif2str(
     if element_params_map is None:
         element_params_map = {}
 
-    # add wyckoff positions and overwrite TDS if mapped
+    # add wyckoff positions and overwrite parameters if mapped
     element_settings_str = []
     for element_setting in element_settings:
         element_name = element_setting.get("E", "")
 
-        assigned_val = None
+        assigned_dict = None
 
         # First, check if there is a specific match for this element
-        for element_key, custom_val in element_params_map.items():
+        for element_key, custom_dict in element_params_map.items():
             if element_key != "*" and element_key in element_name:
-                assigned_val = custom_val
+                assigned_dict = custom_dict
                 break
 
         # If no specific match was found, check if a wildcard was provided
-        if assigned_val is None and "*" in element_params_map:
-            assigned_val = element_params_map["*"]
+        if assigned_dict is None and "*" in element_params_map:
+            assigned_dict = element_params_map["*"]
 
-        # If we found either a specific match or a wildcard, overwrite the TDS
-        if assigned_val is not None:
-            element_setting["TDS"] = assigned_val
+        # If we found either a specific match or a wildcard, update the dictionary
+        if assigned_dict is not None:
+            element_setting.update(assigned_dict)
 
         line_str = " ".join([f"{k}={v}" for k, v in element_setting.items()])
         element_settings_str.append(line_str)
