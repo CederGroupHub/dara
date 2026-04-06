@@ -285,15 +285,16 @@ def cif2str(
         k2: the second peak parameter to be refined. Read more in the BGMN manual.
         b1: the third peak parameter to be refined. Read more in the BGMN manual.
         lebail: whether to use the Le Bail method
-        custom_lines: optional list of custom BGMN string parameters to inject. This allows for defining complex 
-            mathematical equations, global parameters, or fractional occupancies 
+        custom_lines: optional list of custom BGMN string parameters to inject. This allows for defining complex
+            mathematical equations, global parameters, or fractional occupancies
             (e.g., ["PARAM=Bglobal=0.05_0.01^0.20 //", "PARAM=BO=0.1_0.02^0.3 //"]).
         element_params_map: optional dictionary mapping element symbols to custom variable strings. You can inject
-            multiple BGMN keywords into the Wyckoff line simultaneously. 
-            You can use the wildcard key "*" to apply a global parameter to all elements that are not specifically 
-            matched in the dictionary (e.g., {"*": "Bglobal", "O": "BO Occ=OccO"}).
+            multiple BGMN keywords into the Wyckoff line simultaneously. You can use the wildcard key "*" to apply
+            a global parameter to all elements that are not specifically matched in the dictionary
+            (e.g., {"*": "Bglobal", "O": "BO Occ=OccO"}).
 
-    An example of the output .str file when using custom_lines=["PARAM=Bglobal=0.05_0.01^0.20 //", "PARAM=BO=0.1_0.02^0.3 //"] 
+    An example of the output .str file when using
+    custom_lines=["PARAM=Bglobal=0.05_0.01^0.20 //", "PARAM=BO=0.1_0.02^0.3 //"]
     and element_params_map={"*": "Bglobal", "O": "BO"}:
 
     PHASE=BariumzirconiumtinIVoxide105053 // ICSD_43137
@@ -389,19 +390,19 @@ def cif2str(
     element_settings_str = []
     for element_setting in element_settings:
         element_name = element_setting.get("E", "")
-        
+
         assigned_val = None
-        
+
         # First, check if there is a specific match for this element
         for element_key, custom_val in element_params_map.items():
             if element_key != "*" and element_key in element_name:
                 assigned_val = custom_val
                 break
-                
+
         # If no specific match was found, check if a wildcard was provided
         if assigned_val is None and "*" in element_params_map:
             assigned_val = element_params_map["*"]
-            
+
         # If we found either a specific match or a wildcard, overwrite the TDS
         if assigned_val is not None:
             element_setting["TDS"] = assigned_val
