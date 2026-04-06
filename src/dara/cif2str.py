@@ -267,6 +267,8 @@ def cif2str(
     k2: str = "0_0^0.01",
     b1: str = "0_0^0.01",
     lebail: bool = False,
+    custom_lines: list[str] | None = None,
+    element_params_map: dict[str, str] | None = None,
 ) -> Path:
     """
     Convert CIF to Str format.
@@ -283,8 +285,16 @@ def cif2str(
         k2: the second peak parameter to be refined. Read more in the BGMN manual.
         b1: the third peak parameter to be refined. Read more in the BGMN manual.
         lebail: whether to use the Le Bail method
+        custom_lines: optional list of custom BGMN string parameters to inject. This allows for defining complex 
+            mathematical equations, global parameters, or fractional occupancies 
+            (e.g., ["PARAM=Bglobal=0.05_0.01^0.20 //", "PARAM=BO=0.1_0.02^0.3 //"]).
+        element_params_map: optional dictionary mapping element symbols to custom variable strings. You can inject
+            multiple BGMN keywords into the Wyckoff line simultaneously. 
+            You can use the wildcard key "*" to apply a global parameter to all elements that are not specifically 
+            matched in the dictionary (e.g., {"*": "Bglobal", "O": "BO Occ=OccO"}).
 
-    An example of the output .str file:
+    An example of the output .str file when using custom_lines=["PARAM=Bglobal=0.05_0.01^0.20 //", "PARAM=BO=0.1_0.02^0.3 //"] 
+    and element_params_map={"*": "Bglobal", "O": "BO"}:
 
     PHASE=BariumzirconiumtinIVoxide105053 // ICSD_43137
     Reference=ICSD_43137 //
@@ -293,9 +303,11 @@ def cif2str(
     PARAM=A=0.416280_0.412117^0.420443 //
     RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
     GOAL:BariumzirconiumtinIVoxide105053=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
-    E=BA+2 Wyckoff=b x=0.500000 y=0.500000 z=0.500000 TDS=0.010000
-    E=(ZR+4(0.5000),SN+4(0.5000)) Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.010000
-    E=O-2 Wyckoff=d x=0.500000 y=0.000000 z=0.000000 TDS=0.010000
+    PARAM=Bglobal=0.05_0.01^0.20 //
+    PARAM=BO=0.1_0.02^0.3 //
+    E=BA+2 Wyckoff=b x=0.500000 y=0.500000 z=0.500000 TDS=Bglobal
+    E=(ZR+4(0.5000),SN+4(0.5000)) Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=Bglobal
+    E=O-2 Wyckoff=d x=0.500000 y=0.000000 z=0.000000 TDS=BO
 
     """
     str_path = (
@@ -365,11 +377,38 @@ def cif2str(
     # add goals
     str_text += f"GOAL:{phase_name}=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //\nGOAL=GrainSize(1,1,1) //\n"
 
-    # add wyckoff positions
-    element_settings_str = [
-        " ".join([f"{k}={v}" for k, v in element_setting.items()])
-        for element_setting in element_settings
-    ]
+    # add custom lines injected from python dict
+    if custom_lines is not None:
+        for line in custom_lines:
+            str_text += f"{line}\n"
+
+    if element_params_map is None:
+        element_params_map = {}
+
+    # add wyckoff positions and overwrite TDS if mapped
+    element_settings_str = []
+    for element_setting in element_settings:
+        element_name = element_setting.get("E", "")
+        
+        assigned_val = None
+        
+        # First, check if there is a specific match for this element
+        for element_key, custom_val in element_params_map.items():
+            if element_key != "*" and element_key in element_name:
+                assigned_val = custom_val
+                break
+                
+        # If no specific match was found, check if a wildcard was provided
+        if assigned_val is None and "*" in element_params_map:
+            assigned_val = element_params_map["*"]
+            
+        # If we found either a specific match or a wildcard, overwrite the TDS
+        if assigned_val is not None:
+            element_setting["TDS"] = assigned_val
+
+        line_str = " ".join([f"{k}={v}" for k, v in element_setting.items()])
+        element_settings_str.append(line_str)
+
     str_text += "\n".join(element_settings_str)
 
     with open(str_path, "w") as f:
