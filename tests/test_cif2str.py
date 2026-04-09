@@ -36,15 +36,15 @@ class TestCif2Str(unittest.TestCase):
                 self.assertTrue(ref_phase_name == phase_name)
 
     def test_cif2str_custom_params(self):
-        """Test the cif2str function with custom_lines and element_params_map."""
+        """Test the cif2str function with custom_params and custom_params_map."""
         if not self.cif_paths:
             self.skipTest("No CIF files found for testing.")
 
         # Just use the first available CIF for this test
         cif_path = self.cif_paths[0]
         
-        custom_lines = ["PARAM=Bglobal=0.05_0.01^0.20 //", "PARAM=BO=0.1_0.02^0.3 //"]
-        element_params_map = {
+        custom_params = ["PARAM=Bglobal=0.05_0.01^0.20 //", "PARAM=BO=0.1_0.02^0.3 //"]
+        custom_params_map = {
             "*": {"TDS": "Bglobal"},
             "O": {"TDS": "BO", "Occ": "OccO"}
         }
@@ -54,8 +54,8 @@ class TestCif2Str(unittest.TestCase):
             str_path = cif2str(
                 cif_path, 
                 working_dir=tmpdir, 
-                custom_lines=custom_lines, 
-                element_params_map=element_params_map
+                custom_params=custom_params, 
+                custom_params_map=custom_params_map
             )
 
             self.assertTrue(str_path.exists())
@@ -64,7 +64,7 @@ class TestCif2Str(unittest.TestCase):
                 content = f.read()
 
             # Verify that custom lines were successfully injected
-            for line in custom_lines:
+            for line in custom_params:
                 self.assertIn(line, content)
 
             # Verify the wildcard fallback applied Bglobal
