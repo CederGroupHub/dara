@@ -285,16 +285,16 @@ def cif2str(
         k2: the second peak parameter to be refined. Read more in the BGMN manual.
         b1: the third peak parameter to be refined. Read more in the BGMN manual.
         lebail: whether to use the Le Bail method
-        custom_lines: optional list of custom BGMN string parameters to inject. This allows for defining complex
+        custom_params: optional list of custom BGMN string parameters to inject. This allows for defining complex
             mathematical equations, global parameters, or fractional occupancies
             (e.g., ["PARAM=Bglobal=0.05_0.01^0.20 //", "PARAM=BO=0.1_0.02^0.3 //"]).
-        element_params_map: optional dictionary mapping element symbols to dictionaries of parameters to add
+        custom_params_map: optional dictionary mapping element symbols to dictionaries of parameters to add
             or overwrite. You can use the wildcard key "*" to apply parameters to all elements that are not
             specifically matched in the dictionary (e.g., {"*": {"TDS": "Bglobal"}, "O": {"TDS": "BO", "Occ": "OccO"}}).
 
     An example of the output .str file when using
-    custom_lines=["PARAM=Bglobal=0.05_0.01^0.20 //", "PARAM=BO=0.1_0.02^0.3 //"]
-    and element_params_map={"*": {"TDS": "Bglobal"}, "O": {"TDS": "BO", "Occ": "OccO"}}:
+    custom_params=["PARAM=Bglobal=0.05_0.01^0.20 //", "PARAM=BO=0.1_0.02^0.3 //"]
+    and custom_params_map={"*": {"TDS": "Bglobal"}, "O": {"TDS": "BO", "Occ": "OccO"}}:
 
     PHASE=BariumzirconiumtinIVoxide105053 // ICSD_43137
     Reference=ICSD_43137 //
@@ -377,13 +377,13 @@ def cif2str(
     # add goals
     str_text += f"GOAL:{phase_name}=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //\nGOAL=GrainSize(1,1,1) //\n"
 
-    # add custom lines injected from python dict
-    if custom_lines is not None:
-        for line in custom_lines:
+    # add custom params injected from python dict
+    if custom_params is not None:
+        for line in custom_params:
             str_text += f"{line}\n"
 
-    if element_params_map is None:
-        element_params_map = {}
+    if custom_params_map is None:
+        custom_params_map = {}
 
     # add wyckoff positions and overwrite parameters if mapped
     element_settings_str = []
@@ -393,14 +393,14 @@ def cif2str(
         assigned_dict = None
 
         # First, check if there is a specific match for this element
-        for element_key, custom_dict in element_params_map.items():
+        for element_key, custom_dict in custom_params_map.items():
             if element_key != "*" and element_key in element_name:
                 assigned_dict = custom_dict
                 break
 
         # If no specific match was found, check if a wildcard was provided
-        if assigned_dict is None and "*" in element_params_map:
-            assigned_dict = element_params_map["*"]
+        if assigned_dict is None and "*" in custom_params_map:
+            assigned_dict = custom_params_map["*"]
 
         # If we found either a specific match or a wildcard, update the dictionary
         if assigned_dict is not None:
