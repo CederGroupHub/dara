@@ -267,8 +267,8 @@ def cif2str(
     k2: str = "0_0^0.01",
     b1: str = "0_0^0.01",
     lebail: bool = False,
-    custom_lines: list[str] | None = None,
-    element_params_map: dict[str, dict] | None = None,
+    custom_params: list[str] | None = None,
+    custom_params_map: dict[str, dict] | None = None,
 ) -> Path:
     """
     Convert CIF to Str format.
